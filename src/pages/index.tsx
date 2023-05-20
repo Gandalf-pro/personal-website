@@ -21,52 +21,68 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main
-        className={`min-h-screen font-sans text-white ${firaFont.variable}`}
+        className={`min-h-screen font-sans text-white ${firaFont.variable} bg-gradient-to-br from-[#1f2733] to-[#1f2838]`}
       >
-        <div className="absolute -z-10 h-screen w-screen">
+        {/* <div className="absolute -z-10 h-screen w-screen">
           <Image
             src="/bg-new.png"
             alt="Roses as background"
             fill
             style={{ objectFit: "cover" }}
-            // quality={100}
           />
-        </div>
-        <div className="container mx-auto flex px-4 text-xl">
+        </div> */}
+        <div className="mx-auto flex justify-around bg-gradient-to-b from-[#1f2733] to-[#1f2838] px-4 py-6 text-xl shadow shadow-pink-500">
           <Link
             href="/"
-            className="inline-flex items-center justify-center font-semibold"
+            className="inline-flex items-center justify-center font-semibold underline drop-shadow"
           >
-            <IconRobot size={24} />
             <span>Home</span>
           </Link>
-          <div>
-            <Link
-              href="/about"
-              className="inline-flex items-center justify-center font-semibold"
-            >
-              Projects
-            </Link>
-            <Link
-              href="/about"
-              className="inline-flex items-center justify-center font-semibold"
-            >
-              Blogs
-            </Link>
-            <Link
-              href="/about"
-              className="inline-flex items-center justify-center font-semibold"
-            >
-              Blogs
-            </Link>
+          <Link
+            href="/about"
+            className="inline-flex items-center justify-center font-semibold underline drop-shadow"
+          >
+            Projects
+          </Link>
+          <Link
+            href="/about"
+            className="inline-flex items-center justify-center font-semibold underline drop-shadow"
+          >
+            Blog
+          </Link>
+        </div>
+        <div className="grid grid-cols-12 items-center">
+          <div className="relative col-span-5 h-screen w-full">
+            <Image
+              src="/bg-new-left.png"
+              alt="Roses as background"
+              fill
+              style={{ objectFit: "fill" }}
+            />
+          </div>
+          <div className="col-span-4 text-center text-white">
+            <h1 className="text-5xl font-extrabold tracking-tight text-white sm:text-[5rem]">
+              Özgür Sargut
+            </h1>
+            <div className="w-full text-2xl opacity-75 mt-4">
+              FullStack-Developer
+            </div>
+          </div>
+          <div className="relative col-span-3 h-screen w-full">
+            <Image
+              src="/bg-new-right.png"
+              alt="Roses as background"
+              fill
+              style={{ objectFit: "fill" }}
+            />
           </div>
         </div>
-        <div className="container flex flex-col items-center justify-center gap-12 px-4 py-16 ">
+        {/* <div className="container flex flex-col items-center justify-center gap-12 px-4 py-16 ">
           <h1 className="text-5xl font-extrabold tracking-tight text-white sm:text-[5rem]">
             Özgür Sargut
           </h1>
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:gap-8"></div>
-        </div>
+        </div> */}
       </main>
     </>
   );
