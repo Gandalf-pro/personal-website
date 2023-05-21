@@ -26,6 +26,10 @@ const technologiesData: { name: string; category: TechCategories[] }[] = [
     category: ["backend"],
   },
   {
+    name: "Sql",
+    category: ["backend"],
+  },
+  {
     name: "Reactjs",
     category: ["frontend"],
   },
@@ -58,6 +62,14 @@ const technologiesData: { name: string; category: TechCategories[] }[] = [
     category: ["frontend"],
   },
   {
+    name: "RabbitMQ",
+    category: ["backend"],
+  },
+  {
+    name: "Redis",
+    category: ["backend"],
+  },
+  {
     name: "Bootstrap",
     category: ["frontend"],
   },
@@ -79,6 +91,10 @@ const technologiesData: { name: string; category: TechCategories[] }[] = [
   },
   {
     name: "CI/CD",
+    category: ["devops"],
+  },
+  {
+    name: "Terraform",
     category: ["devops"],
   },
   {
@@ -108,6 +124,14 @@ const technologiesData: { name: string; category: TechCategories[] }[] = [
   {
     name: "Java",
     category: ["backend"],
+  },
+  {
+    name: "DigitalOcean",
+    category: ["devops"],
+  },
+  {
+    name: "Aws",
+    category: ["devops"],
   },
 ];
 
