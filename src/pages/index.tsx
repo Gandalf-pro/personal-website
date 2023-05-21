@@ -4,6 +4,7 @@ import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import { Fira_Sans } from "next/font/google";
+import Technologies from "~/components/Technologies";
 
 const firaFont = Fira_Sans({
   display: "swap",
@@ -31,7 +32,7 @@ const Home: NextPage = () => {
             style={{ objectFit: "cover" }}
           />
         </div> */}
-        <div className="mx-auto flex justify-around bg-gradient-to-b from-[#1f2733] to-[#1f2838] px-4 py-6 text-xl shadow shadow-pink-500">
+        <div className="fixed z-50 mx-auto flex h-20 w-full justify-around bg-gradient-to-b from-[#1f2733] to-[#1f2838] px-4 py-4 text-xl shadow shadow-pink-500">
           <Link
             href="/"
             className="inline-flex items-center justify-center font-semibold underline drop-shadow"
@@ -51,8 +52,8 @@ const Home: NextPage = () => {
             Blog
           </Link>
         </div>
-        <div className="grid grid-cols-12 items-center">
-          <div className="hidden relative col-span-5 h-screen w-full sm:block">
+        <div className="grid grid-cols-12 items-center pt-20">
+          <div className="relative col-span-5 hidden h-screen w-full sm:block">
             <Image
               src="/bg-new-left.png"
               alt="Roses as background"
@@ -60,7 +61,7 @@ const Home: NextPage = () => {
               style={{ objectFit: "fill" }}
             />
           </div>
-          <div className="sm:col-span-4 col-span-6 text-center text-white px-4">
+          <div className="col-span-6 px-4 text-center text-white sm:col-span-4">
             <h1 className="text-5xl font-extrabold tracking-tight text-white sm:text-[5rem]">
               Özgür Sargut
             </h1>
@@ -68,7 +69,7 @@ const Home: NextPage = () => {
               FullStack-Developer
             </div>
           </div>
-          <div className="relative sm:col-span-3 col-span-6 h-screen w-full">
+          <div className="relative col-span-6 h-screen w-full sm:col-span-3">
             <Image
               src="/bg-new-right.png"
               alt="Roses as background"
@@ -77,12 +78,7 @@ const Home: NextPage = () => {
             />
           </div>
         </div>
-        {/* <div className="container flex flex-col items-center justify-center gap-12 px-4 py-16 ">
-          <h1 className="text-5xl font-extrabold tracking-tight text-white sm:text-[5rem]">
-            Özgür Sargut
-          </h1>
-          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:gap-8"></div>
-        </div> */}
+        <Technologies />
       </main>
     </>
   );

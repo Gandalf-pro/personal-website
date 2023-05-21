@@ -9,6 +9,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "@radix-ui/react-scroll-area": "^1.0.3",
     "@tabler/icons-react": "^2.14.0",
     "next": "^13.2.4",
     "react": "18.2.0",
