@@ -1,48 +1,55 @@
-import React from "react";
-import TechnologiesShowcase from "./TechnologiesShowcase";
-import * as ScrollArea from "@radix-ui/react-scroll-area";
+"use client";
 
-const technologies = [
-  "Typescript",
-  "Javascript",
-  "Nodejs",
-  "Kubernetes",
-  "Postgresql",
-  "Reactjs",
-  "Express",
-  "Prisma",
-  "Html",
-  "Css",
-  "Js",
-  "Vue",
-  "Nextjs",
-  "Tailwind",
-  "Bootstrap",
-  "Linux",
-  "Python",
-  "Flask",
-  "C+",
-  "Iot",
-  "Java",
-  "Rust",
-];
+import { IconInfoCircle } from "@tabler/icons-react";
+import { useState } from "react";
+import technologiesData from "~/data/technologiesData";
+import TechnologiesDetailedView from "./TechnologiesDetailedView";
+import TechnologiesShowcase from "./TechnologiesShowcase";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "./Tooltip";
 
 const Technologies = () => {
-  const techComponent = technologies.map((tech) => (
-    <TechnologiesShowcase text={tech} key={tech} />
+  const [isDetailedView, setIsDetailedView] = useState(false);
+  const techComponent = technologiesData.map((tech) => (
+    <TechnologiesShowcase text={tech.name} key={tech.name} />
   ));
+
   return (
-    <div className="container mx-auto mt-4 h-96">
-      <h3 className="text-5xl font-bold">Technologies</h3>
-      <div className="mt-4 overflow-x-clip">
-        <div className="flex-container flex flex-row gap-4">
-          {techComponent}
-          {techComponent}
-          {techComponent}
-          {techComponent}
-          {techComponent}
+    <div className="container mx-auto mt-6 h-96">
+      <h3 className="mb-5 inline-flex items-center gap-3 text-5xl font-bold">
+        Technologies
+        <TooltipProvider>
+          <Tooltip>
+            <TooltipTrigger>
+              <button onClick={() => setIsDetailedView(!isDetailedView)}>
+                <IconInfoCircle
+                  size="0.75em"
+                  className="hover:text-pink-600 hover:opacity-80 hover:shadow-sm"
+                />
+              </button>
+            </TooltipTrigger>
+            <TooltipContent className="">
+              <p className="text-lg text-white">See in them categorized</p>
+            </TooltipContent>
+          </Tooltip>
+        </TooltipProvider>
+      </h3>
+      {isDetailedView && (
+        <div className="overflow-x-clip">
+          <div className="flex-container flex flex-row gap-4">
+            {techComponent}
+            {techComponent}
+            {techComponent}
+            {techComponent}
+            {techComponent}
+          </div>
         </div>
-      </div>
+      )}
+      {!isDetailedView && <TechnologiesDetailedView />}
     </div>
   );
 };
