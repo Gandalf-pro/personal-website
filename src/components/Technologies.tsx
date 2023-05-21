@@ -38,7 +38,7 @@ const Technologies = () => {
           </Tooltip>
         </TooltipProvider>
       </h3>
-      {isDetailedView && (
+      {!isDetailedView && (
         <div className="overflow-x-clip">
           <div className="flex-container flex flex-row gap-4">
             {techComponent}
@@ -49,7 +49,7 @@ const Technologies = () => {
           </div>
         </div>
       )}
-      {!isDetailedView && <TechnologiesDetailedView />}
+      {isDetailedView && <TechnologiesDetailedView />}
     </div>
   );
 };
