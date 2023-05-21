@@ -1,9 +1,9 @@
-import { IconRobot } from "@tabler/icons-react";
+import { motion } from "framer-motion";
 import { type NextPage } from "next";
+import { Fira_Sans } from "next/font/google";
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
-import { Fira_Sans } from "next/font/google";
 import Technologies from "~/components/Technologies";
 
 const firaFont = Fira_Sans({
@@ -52,15 +52,20 @@ const Home: NextPage = () => {
             Blog
           </Link>
         </div>
-        <div className="grid grid-cols-12 items-center pt-20">
-          <div className="relative col-span-5 hidden h-screen w-full sm:block">
+        <div className="grid grid-cols-12 items-center pt-20 overflow-x-hidden">
+          <motion.div
+            initial={{ x: "-50%" }}
+            animate={{ x: "0" }}
+            transition={{ ease: "anticipate", duration: 2 }}
+            className="relative col-span-5 hidden h-screen w-full sm:block"
+          >
             <Image
               src="/bg-new-left.png"
               alt="Roses as background"
               fill
               style={{ objectFit: "fill" }}
             />
-          </div>
+          </motion.div>
           <div className="col-span-6 px-4 text-center text-white sm:col-span-4">
             <h1 className="text-5xl font-extrabold tracking-tight text-white sm:text-[5rem]">
               Özgür Sargut
@@ -69,14 +74,19 @@ const Home: NextPage = () => {
               FullStack-Developer
             </div>
           </div>
-          <div className="relative col-span-6 h-screen w-full sm:col-span-3">
+          <motion.div
+            initial={{ x: "50%" }}
+            animate={{ x: "0" }}
+            transition={{ ease: "anticipate", duration: 2 }}
+            className="relative col-span-6 h-screen w-full sm:col-span-3"
+          >
             <Image
               src="/bg-new-right.png"
               alt="Roses as background"
               fill
               style={{ objectFit: "fill" }}
             />
-          </div>
+          </motion.div>
         </div>
         <Technologies />
       </main>
