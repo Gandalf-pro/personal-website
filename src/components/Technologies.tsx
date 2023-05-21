@@ -24,13 +24,11 @@ const Technologies = () => {
         Technologies
         <TooltipProvider>
           <Tooltip>
-            <TooltipTrigger>
-              <button onClick={() => setIsDetailedView(!isDetailedView)}>
-                <IconInfoCircle
-                  size="0.75em"
-                  className="hover:text-pink-600 hover:opacity-80 hover:shadow-sm"
-                />
-              </button>
+            <TooltipTrigger onClick={() => setIsDetailedView(!isDetailedView)}>
+              <IconInfoCircle
+                size="0.75em"
+                className="hover:text-pink-600 hover:opacity-80 hover:shadow-sm"
+              />
             </TooltipTrigger>
             <TooltipContent className="">
               <p className="text-lg text-white">See in them categorized</p>
