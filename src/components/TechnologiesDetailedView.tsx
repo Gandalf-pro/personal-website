@@ -36,7 +36,7 @@ const TechnologiesDetailedView = () => {
 
   return (
     <div>
-      <Tabs defaultValue="backend" className="w-full" orientation="horizontal">
+      <Tabs defaultValue="backend" className="w-full">
         <TabsList className="mb-3 h-12 w-full">
           <TabsTrigger className="text-xl" value="backend">
             Backend
