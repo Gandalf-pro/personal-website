@@ -52,7 +52,7 @@ const Home: NextPage = () => {
           </Link>
         </div>
         <div className="grid grid-cols-12 items-center">
-          <div className="relative col-span-5 h-screen w-full">
+          <div className="hidden relative col-span-5 h-screen w-full sm:block">
             <Image
               src="/bg-new-left.png"
               alt="Roses as background"
@@ -60,15 +60,15 @@ const Home: NextPage = () => {
               style={{ objectFit: "fill" }}
             />
           </div>
-          <div className="col-span-4 text-center text-white">
+          <div className="sm:col-span-4 col-span-6 text-center text-white px-4">
             <h1 className="text-5xl font-extrabold tracking-tight text-white sm:text-[5rem]">
               Özgür Sargut
             </h1>
-            <div className="w-full text-2xl opacity-75 mt-4">
+            <div className="mt-4 w-full text-xl opacity-75 sm:text-3xl">
               FullStack-Developer
             </div>
           </div>
-          <div className="relative col-span-3 h-screen w-full">
+          <div className="relative sm:col-span-3 col-span-6 h-screen w-full">
             <Image
               src="/bg-new-right.png"
               alt="Roses as background"
