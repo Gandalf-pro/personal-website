@@ -52,10 +52,10 @@ const Home: NextPage = () => {
             Blog
           </Link>
         </div>
-        <div className="grid grid-cols-12 items-center pt-20 overflow-x-hidden">
+        <div className="grid grid-cols-12 items-center overflow-x-hidden pt-20">
           <motion.div
-            initial={{ x: "-50%" }}
-            animate={{ x: "0" }}
+            initial={{ x: "-50%", opacity: 0.6 }}
+            animate={{ x: "0", opacity: 1 }}
             transition={{ ease: "anticipate", duration: 2 }}
             className="relative col-span-5 hidden h-screen w-full sm:block"
           >
@@ -75,8 +75,8 @@ const Home: NextPage = () => {
             </div>
           </div>
           <motion.div
-            initial={{ x: "50%" }}
-            animate={{ x: "0" }}
+            initial={{ x: "50%", opacity: 0.6 }}
+            animate={{ x: "0", opacity: 1 }}
             transition={{ ease: "anticipate", duration: 2 }}
             className="relative col-span-6 h-screen w-full sm:col-span-3"
           >
