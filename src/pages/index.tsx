@@ -46,7 +46,7 @@ const Home: NextPage = () => {
             Projects
           </Link>
           <Link
-            href="/about"
+            href="/blog"
             className="inline-flex items-center justify-center font-semibold underline drop-shadow"
           >
             Blog

@@ -86,6 +86,10 @@ const technologiesData: { name: string; category: TechCategories[] }[] = [
     category: ["mobile"],
   },
   {
+    name: "Expo",
+    category: ["mobile"],
+  },
+  {
     name: "Git",
     category: ["devops"],
   },
