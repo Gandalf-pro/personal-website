@@ -1,8 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
 import HeaderUnderline from "./HeaderUnderline";
+import { useState } from "react";
+import Hamburger from "./Hamburger";
 
 const Header = () => {
+  const [isVisible, setIsVisible] = useState(false);
+
   return (
     <div className="fixed z-50 mx-auto flex h-20 w-full items-center justify-around bg-gradient-to-b from-[#1f2733] to-[#1f2838] px-4 py-4 text-xl shadow shadow-pink-500">
       <Link
@@ -11,7 +15,11 @@ const Header = () => {
       >
         <Image alt="Logo" src="/logo-transparent.png" width={48} height={48} />
       </Link>
-      <div className="flex gap-3">
+      {/* Sm hamburger */}
+      <div className="block sm:hidden">
+        <Hamburger isVisible={isVisible} setIsVisible={setIsVisible} />
+      </div>
+      <div className="hidden gap-3 sm:flex">
         <Link
           href="/#about"
           onClick={(e) => {
