@@ -37,20 +37,35 @@ const TechnologiesDetailedView = () => {
   return (
     <div>
       <Tabs defaultValue="backend" className="w-full">
-        <TabsList className="mb-3 h-12 w-full">
-          <TabsTrigger className="text-xl font-semibold" value="backend">
+        <TabsList className="mb-3 flex h-auto w-full flex-wrap sm:h-12 sm:flex-nowrap">
+          <TabsTrigger
+            className="w-auto text-xl font-semibold sm:w-full"
+            value="backend"
+          >
             Backend
           </TabsTrigger>
-          <TabsTrigger className="text-xl font-semibold" value="devops">
+          <TabsTrigger
+            className="w-auto text-xl font-semibold sm:w-full"
+            value="devops"
+          >
             Devops
           </TabsTrigger>
-          <TabsTrigger className="text-xl font-semibold" value="frontend">
+          <TabsTrigger
+            className="w-auto text-xl font-semibold sm:w-full"
+            value="frontend"
+          >
             Frontend
           </TabsTrigger>
-          <TabsTrigger className="text-xl font-semibold" value="mobile">
+          <TabsTrigger
+            className="w-auto text-xl font-semibold sm:w-full"
+            value="mobile"
+          >
             Mobile
           </TabsTrigger>
-          <TabsTrigger className="text-xl font-semibold" value="misc">
+          <TabsTrigger
+            className="w-auto text-xl font-semibold sm:w-full"
+            value="misc"
+          >
             Misc
           </TabsTrigger>
         </TabsList>
