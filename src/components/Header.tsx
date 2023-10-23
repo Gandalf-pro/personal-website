@@ -62,7 +62,7 @@ const Header = () => {
   );
 
   return (
-    <div className="fixed z-50 mx-auto h-fit w-full bg-gradient-to-b from-[#1f2733] to-[#1f2838] px-4 py-2 text-xl shadow shadow-pink-500 transition-all sm:h-20">
+    <div className="sticky top-0 z-50 mx-auto h-fit w-full bg-gradient-to-b from-[#1f2733] to-[#1f2838] px-4 py-2 text-xl shadow shadow-pink-500 transition-all sm:h-20">
       <div className="flex h-full w-full items-center justify-between sm:justify-around">
         <motion.div
           initial={{ x: "-100%", opacity: 0.6 }}
