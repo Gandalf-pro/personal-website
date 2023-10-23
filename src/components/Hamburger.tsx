@@ -1,4 +1,4 @@
-import type { Dispatch, SetStateAction } from "react";
+import { useState, type Dispatch, type SetStateAction, useEffect } from "react";
 
 export interface HamburgerProps {
   isVisible: boolean;
@@ -6,9 +6,24 @@ export interface HamburgerProps {
 }
 
 const Hamburger = ({ isVisible, setIsVisible }: HamburgerProps) => {
+  const [debouncedClick, setDebouncedClick] = useState(false);
+
   const handleClick = () => {
-    setIsVisible((val) => !val);
+    if (!debouncedClick) {
+      setIsVisible((val) => !val);
+      setDebouncedClick(true);
+    }
   };
+
+  useEffect(() => {
+    const debounceTimeout = setTimeout(() => {
+      setDebouncedClick(false);
+    }, 150);
+
+    return () => {
+      clearTimeout(debounceTimeout);
+    };
+  }, [debouncedClick]);
 
   return (
     <button
