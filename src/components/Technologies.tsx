@@ -19,8 +19,8 @@ const Technologies = () => {
   ));
 
   return (
-    <div className="container mx-auto mt-6 h-96">
-      <h3 className="mb-5 inline-flex items-end gap-3 text-4xl font-bold sm:px-0 px-2 w-full max-w-full">
+    <div className="container mx-auto mt-6">
+      <h3 className="mb-5 inline-flex w-full max-w-full items-center gap-3 px-2 text-3xl font-semibold sm:px-0">
         Technologies / Skills
         <TooltipProvider delayDuration={250}>
           <Tooltip>

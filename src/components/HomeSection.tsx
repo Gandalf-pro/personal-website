@@ -7,7 +7,7 @@ export interface HomeSectionProps extends PropsWithChildren {
 const HomeSection = ({ children, title }: HomeSectionProps) => {
   return (
     <section
-      className="container mx-auto mt-6 px-2 sm:px-0"
+      className="container mx-auto mt-24 px-2 sm:px-0"
       id={title.toLowerCase()}
     >
       <h2 className="text-5xl font-extrabold">{title}</h2>
