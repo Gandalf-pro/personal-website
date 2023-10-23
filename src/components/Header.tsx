@@ -24,12 +24,29 @@ const Header = () => {
             e.preventDefault();
             aboutSection.scrollIntoView({
               behavior: "smooth",
+              block: "center",
             });
           }
         }}
         className="inline-flex items-center justify-center font-semibold underline drop-shadow"
       >
         About
+      </Link>
+      <Link
+        href="/#contact"
+        onClick={(e) => {
+          const aboutSection = document.querySelector("#contact");
+          if (aboutSection) {
+            e.preventDefault();
+            aboutSection.scrollIntoView({
+              behavior: "smooth",
+              block: "center",
+            });
+          }
+        }}
+        className="inline-flex items-center justify-center font-semibold underline drop-shadow"
+      >
+        Contact
       </Link>
       <Link
         href="/blog"
