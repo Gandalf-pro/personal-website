@@ -23,7 +23,7 @@ const ContactSection = () => {
         <textarea
           className="w-full rounded-lg bg-black bg-opacity-50 p-2 px-4 py-4 text-white focus:outline-none"
           placeholder="Message *"
-          rows={4}
+          rows={5}
           minLength={3}
           maxLength={5000}
         />
