@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
@@ -8,7 +9,7 @@ const Header = () => {
         href="/"
         className="inline-flex items-center justify-center font-semibold underline drop-shadow"
       >
-        <span>Home</span>
+        <Image alt="Logo" src="/logo-transparent.png" width={48} height={48} />
       </Link>
       <Link
         href="/about"
