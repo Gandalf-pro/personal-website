@@ -1,7 +1,9 @@
 import { Fira_Sans, Noto_Sans_Mono } from "next/font/google";
 import Head from "next/head";
+import Link from "next/link";
 import React, { PropsWithChildren } from "react";
 import { cn } from "~/utils/cn";
+import Header from "./Header";
 
 const firaFont = Fira_Sans({
   display: "swap",
@@ -36,6 +38,7 @@ const AppWrapper = ({ children, title, className }: AppWrapperProps) => {
           className
         )}
       >
+        <Header />
         {children}
       </main>
     </>
