@@ -20,8 +20,8 @@ const Technologies = () => {
 
   return (
     <div className="container mx-auto mt-6 h-96">
-      <h3 className="mb-5 inline-flex items-end gap-3 text-5xl font-bold">
-        Technologies
+      <h3 className="mb-5 inline-flex items-end gap-3 text-4xl font-bold sm:px-0 px-2 w-full max-w-full">
+        Technologies / Skills
         <TooltipProvider delayDuration={250}>
           <Tooltip>
             <TooltipTrigger onClick={() => setIsDetailedView(!isDetailedView)}>

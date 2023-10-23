@@ -1,18 +1,15 @@
 import {
   IconBrandGithub,
-  IconBrandGithubFilled,
   IconBrandLinkedin,
   IconMail,
-  IconMailFilled,
 } from "@tabler/icons-react";
 import { motion } from "framer-motion";
 import { type NextPage } from "next";
-import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
+import AboutSection from "~/components/AboutSection";
 import AppWrapper from "~/components/AppWrapper";
 import HomeLink from "~/components/HomeLink";
-import Technologies from "~/components/Technologies";
 import { constantVariables } from "~/utils/constantVariables";
 
 const Home: NextPage = () => {
@@ -88,7 +85,7 @@ const Home: NextPage = () => {
           />
         </motion.div>
       </div>
-      <Technologies />
+      <AboutSection />
     </AppWrapper>
   );
 };
