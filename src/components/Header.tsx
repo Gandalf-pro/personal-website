@@ -67,7 +67,7 @@ const Header = () => {
         isVisible ? "h-fit" : "h-20"
       }`}
     >
-      <div className="flex h-full w-full items-center justify-around">
+      <div className="flex h-full w-full items-center justify-between sm:justify-around">
         <Link
           href="/"
           className="group inline-flex h-fit items-center justify-center drop-shadow"
