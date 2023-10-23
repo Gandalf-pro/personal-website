@@ -68,23 +68,35 @@ const Header = () => {
       }`}
     >
       <div className="flex h-full w-full items-center justify-between sm:justify-around">
-        <Link
-          href="/"
-          className="group inline-flex h-fit items-center justify-center drop-shadow"
+        <motion.div
+          initial={{ x: "-100%", opacity: 0.6 }}
+          animate={{ x: "0", opacity: 1 }}
+          transition={{ ease: "anticipate", duration: 0.75, type: "spring" }}
         >
-          <Image
-            alt="Logo"
-            src="/logo-transparent.png"
-            width={48}
-            height={48}
-          />
-        </Link>
+          <Link
+            href="/"
+            className="group inline-flex h-fit items-center justify-center drop-shadow"
+          >
+            <Image
+              alt="Logo"
+              src="/logo-transparent.png"
+              width={48}
+              height={48}
+            />
+          </Link>
+        </motion.div>
         {/* Sm hamburger */}
         <div className="block sm:hidden">
           <Hamburger isVisible={isVisible} setIsVisible={setIsVisible} />
         </div>
 
-        <div className="hidden gap-3 sm:flex">{innerLinks}</div>
+        <motion.div
+          initial={{ x: "50%", opacity: 0.6 }}
+          animate={{ x: "0", opacity: 1 }}
+          transition={{ ease: "anticipate", duration: 0.75, type: "spring" }}
+        >
+          <div className="hidden gap-3 sm:flex">{innerLinks}</div>
+        </motion.div>
       </div>
       {isVisible && (
         <motion.div
