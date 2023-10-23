@@ -1,10 +1,19 @@
+import {
+  IconBrandGithub,
+  IconBrandGithubFilled,
+  IconBrandLinkedin,
+  IconMail,
+  IconMailFilled,
+} from "@tabler/icons-react";
 import { motion } from "framer-motion";
 import { type NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import AppWrapper from "~/components/AppWrapper";
+import HomeLink from "~/components/HomeLink";
 import Technologies from "~/components/Technologies";
+import { constantVariables } from "~/utils/constantVariables";
 
 const Home: NextPage = () => {
   return (
@@ -44,11 +53,25 @@ const Home: NextPage = () => {
           />
         </motion.div>
         <div className="col-span-6 px-4 text-center text-white sm:col-span-4">
-          <h1 className="text-5xl font-extrabold tracking-tight text-white sm:text-[5rem]">
-            Özgür Sargut
+          <h1 className="text-3xl font-extrabold tracking-tight text-white sm:text-5xl">
+            Hi!✋
+            <br />
+            I&apos;m Özgür Sargut
+            <br />A Software Engineer 💻
           </h1>
-          <div className="mt-4 w-full text-xl opacity-75 sm:text-3xl">
-            FullStack-Developer
+          <div className="mt-4 inline-flex items-center justify-center gap-4">
+            <HomeLink
+              href={`mailto:${constantVariables.emailAddress}`}
+              Icon={IconMail}
+            />
+            <HomeLink
+              href={constantVariables.githubUrl}
+              Icon={IconBrandGithub}
+            />
+            <HomeLink
+              href={constantVariables.linkedInUrl}
+              Icon={IconBrandLinkedin}
+            />
           </div>
         </div>
         <motion.div
