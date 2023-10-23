@@ -62,7 +62,7 @@ const Header = () => {
   );
 
   return (
-    <motion.div
+    <div
       className={`fixed z-50 mx-auto w-full bg-gradient-to-b from-[#1f2733] to-[#1f2838] px-4 py-4 text-xl shadow shadow-pink-500 transition-all sm:h-20 ${
         isVisible ? "h-fit" : "h-20"
       }`}
@@ -97,7 +97,7 @@ const Header = () => {
           {innerLinks}
         </motion.div>
       )}
-    </motion.div>
+    </div>
   );
 };
 
