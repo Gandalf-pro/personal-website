@@ -90,13 +90,15 @@ const Header = () => {
           <Hamburger isVisible={isVisible} setIsVisible={setIsVisible} />
         </div>
 
-        <motion.div
-          initial={{ x: "50%", opacity: 0.6 }}
-          animate={{ x: "0", opacity: 1 }}
-          transition={{ ease: "anticipate", duration: 0.75, type: "spring" }}
-        >
-          <div className="hidden gap-3 sm:flex">{innerLinks}</div>
-        </motion.div>
+        <div className="hidden sm:block">
+          <motion.div
+            initial={{ x: "50%", opacity: 0.6 }}
+            animate={{ x: "0", opacity: 1 }}
+            transition={{ ease: "anticipate", duration: 0.75, type: "spring" }}
+          >
+            <div className="flex gap-3">{innerLinks}</div>
+          </motion.div>
+        </div>
       </div>
       {isVisible && (
         <motion.div
