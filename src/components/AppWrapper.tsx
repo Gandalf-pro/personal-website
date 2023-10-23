@@ -14,7 +14,7 @@ const notoFont = Noto_Sans_Mono({
   display: "swap",
   subsets: ["latin"],
   variable: "--font-mono",
-  weight: ["400", "500", "600", "700", "800"],
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
 });
 
 export interface AppWrapperProps extends PropsWithChildren {
