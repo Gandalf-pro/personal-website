@@ -52,19 +52,21 @@ const Home: NextPage = () => {
             />
           </div>
         </div>
-        <motion.div
-          initial={{ x: "50%", opacity: 0.6 }}
-          animate={{ x: "0", opacity: 1 }}
-          transition={{ ease: "anticipate", duration: 2 }}
-          className="relative col-span-6 h-screen w-full sm:col-span-3"
-        >
-          <Image
-            src="/bg-new-right.png"
-            alt="Roses as background"
-            fill
-            style={{ objectFit: "fill" }}
-          />
-        </motion.div>
+        <div className="hidden h-screen w-full sm:col-span-3 sm:block">
+          <motion.div
+            initial={{ x: "50%", opacity: 0.6 }}
+            animate={{ x: "0", opacity: 1 }}
+            transition={{ ease: "anticipate", duration: 2 }}
+            className="relative h-full w-full"
+          >
+            <Image
+              src="/bg-new-right.png"
+              alt="Roses as background"
+              fill
+              style={{ objectFit: "fill" }}
+            />
+          </motion.div>
+        </div>
       </div>
       <AboutSection />
       <ContactSection />
