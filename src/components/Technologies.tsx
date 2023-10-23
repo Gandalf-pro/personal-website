@@ -22,7 +22,7 @@ const Technologies = () => {
     <div className="container mx-auto mt-6 h-96">
       <h3 className="mb-5 inline-flex items-center gap-3 text-5xl font-bold">
         Technologies
-        <TooltipProvider>
+        <TooltipProvider delayDuration={250}>
           <Tooltip>
             <TooltipTrigger onClick={() => setIsDetailedView(!isDetailedView)}>
               <IconInfoCircle
