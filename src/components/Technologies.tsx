@@ -20,7 +20,7 @@ const Technologies = () => {
 
   return (
     <div className="container mx-auto mt-6 h-96">
-      <h3 className="mb-5 inline-flex items-center gap-3 text-5xl font-bold">
+      <h3 className="mb-5 inline-flex items-end gap-3 text-5xl font-bold">
         Technologies
         <TooltipProvider delayDuration={250}>
           <Tooltip>
