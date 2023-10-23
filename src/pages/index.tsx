@@ -6,7 +6,6 @@ import {
 import { motion } from "framer-motion";
 import { type NextPage } from "next";
 import Image from "next/image";
-import Link from "next/link";
 import AboutSection from "~/components/AboutSection";
 import AppWrapper from "~/components/AppWrapper";
 import ContactSection from "~/components/ContactSection";
@@ -21,16 +20,17 @@ const Home: NextPage = () => {
           initial={{ x: "-50%", opacity: 0.6 }}
           animate={{ x: "0", opacity: 1 }}
           transition={{ ease: "anticipate", duration: 2 }}
-          className="relative col-span-5 hidden h-screen w-full sm:block"
+          className="absolute col-span-5 h-screen w-full sm:relative"
         >
           <Image
             src="/bg-new-left.png"
             alt="Roses as background"
+            className="opacity-25 sm:opacity-100"
             fill
             style={{ objectFit: "fill" }}
           />
         </motion.div>
-        <div className="col-span-6 px-4 text-center text-white sm:col-span-4">
+        <div className="z-10 col-span-8 col-start-3 mt-24 px-4 text-center text-white sm:col-span-4 sm:col-start-auto sm:mt-0">
           <h1 className="text-3xl font-extrabold tracking-tight text-white sm:text-5xl">
             Hi!✋
             <br />
