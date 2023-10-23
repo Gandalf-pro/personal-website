@@ -14,7 +14,7 @@ import { constantVariables } from "~/utils/constantVariables";
 
 const Home: NextPage = () => {
   return (
-    <AppWrapper className="pb-36">
+    <AppWrapper className="pb-32">
       <div className="grid grid-cols-12 items-center overflow-x-hidden pt-20">
         <motion.div
           initial={{ x: "-50%", opacity: 0.6 }}
