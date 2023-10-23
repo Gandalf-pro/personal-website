@@ -3,7 +3,7 @@ import Link from "next/link";
 import HeaderUnderline from "./HeaderUnderline";
 import { useState } from "react";
 import Hamburger from "./Hamburger";
-import { cn } from "~/utils/cn";
+import { motion } from "framer-motion";
 
 const Header = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -62,7 +62,7 @@ const Header = () => {
   );
 
   return (
-    <div
+    <motion.div
       className={`fixed z-50 mx-auto w-full bg-gradient-to-b from-[#1f2733] to-[#1f2838] px-4 py-4 text-xl shadow shadow-pink-500 transition-all sm:h-20 ${
         isVisible ? "h-fit" : "h-20"
       }`}
@@ -87,9 +87,17 @@ const Header = () => {
         <div className="hidden gap-3 sm:flex">{innerLinks}</div>
       </div>
       {isVisible && (
-        <div className="mt-3 flex flex-col gap-3 sm:hidden">{innerLinks}</div>
+        <motion.div
+          layout
+          initial={{ x: "-50%", opacity: 0.6 }}
+          animate={{ x: "0", opacity: 1 }}
+          transition={{ ease: "anticipate", duration: 0.75, type: "spring" }}
+          className="flex flex-col gap-3 sm:hidden"
+        >
+          {innerLinks}
+        </motion.div>
       )}
-    </div>
+    </motion.div>
   );
 };
 
