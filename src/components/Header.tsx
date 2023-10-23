@@ -12,16 +12,6 @@ const Header = () => {
     <>
       <Link
         href="/#about"
-        onClick={(e) => {
-          const aboutSection = document.querySelector("#about");
-          if (aboutSection) {
-            e.preventDefault();
-            aboutSection.scrollIntoView({
-              behavior: "smooth",
-              block: "center",
-            });
-          }
-        }}
         className="group inline-flex h-fit items-center justify-center font-medium drop-shadow"
       >
         About
@@ -29,16 +19,6 @@ const Header = () => {
       </Link>
       <Link
         href="/#contact"
-        onClick={(e) => {
-          const aboutSection = document.querySelector("#contact");
-          if (aboutSection) {
-            e.preventDefault();
-            aboutSection.scrollIntoView({
-              behavior: "smooth",
-              block: "center",
-            });
-          }
-        }}
         className="group inline-flex h-fit items-center justify-center font-medium drop-shadow"
       >
         Contact
@@ -102,7 +82,7 @@ const Header = () => {
           initial={{ x: "-50%", opacity: 0.6 }}
           animate={{ x: "0", opacity: 1 }}
           transition={{ ease: "anticipate", duration: 0.75, type: "spring" }}
-          className="flex flex-col gap-3 sm:hidden pb-3"
+          className="flex flex-col gap-3 pb-3 sm:hidden"
         >
           {innerLinks}
         </motion.div>
