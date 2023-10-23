@@ -3,7 +3,7 @@ import HomeSection from "./HomeSection";
 
 const ContactSection = () => {
   return (
-    <HomeSection title="Contact Me">
+    <HomeSection title="📬 Contact" id="contact">
       <div className="flex w-full flex-col gap-3">
         <input
           name="name"

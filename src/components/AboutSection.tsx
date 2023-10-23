@@ -4,7 +4,7 @@ import HomeSection from "./HomeSection";
 
 const AboutSection = () => {
   return (
-    <HomeSection title="About">
+    <HomeSection title="🚀 About" id="about">
       <div>
         Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maiores
         tempora eveniet tempore, accusantium dolores ipsa laborum iure, adipisci
