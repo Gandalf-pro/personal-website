@@ -16,7 +16,7 @@ const ProjectCard = ({
           {technologies.map((val) => (
             <div
               key={val}
-              className="rounded-full bg-slate-700/70 px-2 py-1 text-sm text-primary/80 whitespace-nowrap"
+              className="whitespace-nowrap rounded-full bg-slate-700/70 px-2 py-1 text-sm text-primary/80"
             >
               {val}
             </div>
@@ -26,12 +26,14 @@ const ProjectCard = ({
           {description}
         </div>
       </div>
-      <Link
-        href={`/projects/${slug}`}
-        className="inline-flex w-full items-center justify-center gap-2 rounded-lg border-2 border-pink-600 px-4 py-1 text-lg shadow-sm shadow-pink-600 transition-colors hover:bg-gradient-to-br hover:from-pink-600 hover:to-red-600"
-      >
-        Learn More <IconCaretRight className="h-7 w-7" />
-      </Link>
+      {!!slug && (
+        <Link
+          href={`/projects/${slug}`}
+          className="inline-flex w-full items-center justify-center gap-2 rounded-lg border-2 border-pink-600 px-4 py-1 text-lg shadow-sm shadow-pink-600 transition-colors hover:bg-gradient-to-br hover:from-pink-600 hover:to-red-600"
+        >
+          Learn More <IconCaretRight className="h-7 w-7" />
+        </Link>
+      )}
     </div>
   );
 };
