@@ -12,50 +12,51 @@ const AutoHome: NextPage = () => {
       application or a web interface.
       <br />
       <br />
+      Github links:
+      <div className="mt-2 flex flex-wrap gap-2">
+        <Link
+          href="https://github.com/Gandalf-pro/auto-home-server"
+          className="whitespace-nowrap rounded-2xl bg-slate-700/70 px-2 py-1 underline transition-all hover:text-pink-600"
+        >
+          Server
+        </Link>
+        <Link
+          href="https://github.com/Gandalf-pro/auto-home-web"
+          className="whitespace-nowrap rounded-2xl bg-slate-700/70 px-2 py-1 underline transition-all hover:text-pink-600"
+        >
+          Web
+        </Link>
+        <Link
+          href="https://github.com/Gandalf-pro/auto-home-mobile"
+          className="whitespace-nowrap rounded-2xl bg-slate-700/70 px-2 py-1 underline transition-all hover:text-pink-600"
+        >
+          Mobile
+        </Link>
+        <Link
+          href="https://github.com/Gandalf-pro/auto-home-leds"
+          className="whitespace-nowrap rounded-2xl bg-slate-700/70 px-2 py-1 underline transition-all hover:text-pink-600"
+        >
+          Leds
+        </Link>
+        <Link
+          href="https://github.com/Gandalf-pro/auto-home-blinds-ac"
+          className="whitespace-nowrap rounded-2xl bg-slate-700/70 px-2 py-1 underline transition-all hover:text-pink-600"
+        >
+          Ac/Blinds
+        </Link>
+        <Link
+          href="https://github.com/Gandalf-pro/auto-home-arduino-general"
+          className="whitespace-nowrap rounded-2xl bg-slate-700/70 px-2 py-1 underline transition-all hover:text-pink-600"
+        >
+          General Arduino Lib
+        </Link>
+      </div>
+      <br />
       Here is a 1min video demonstrating it{" "}
       <Link href="https://youtu.be/tOnSqNN54eE" className="underline">
         https://youtu.be/tOnSqNN54eE
       </Link>{" "}
       (sorry for the music)
-      <br />
-      <br />
-      Github links:
-      <Link
-        href="https://github.com/Gandalf-pro/auto-home-server"
-        className="mx-2 rounded-2xl bg-slate-700/70 px-2 py-1 underline transition-all hover:text-pink-600"
-      >
-        Server
-      </Link>
-      <Link
-        href="https://github.com/Gandalf-pro/auto-home-web"
-        className="mr-2 rounded-2xl bg-slate-700/70 px-2 py-1 underline transition-all hover:text-pink-600"
-      >
-        Web
-      </Link>
-      <Link
-        href="https://github.com/Gandalf-pro/auto-home-mobile"
-        className="mr-2 rounded-2xl bg-slate-700/70 px-2 py-1 underline transition-all hover:text-pink-600"
-      >
-        Mobile
-      </Link>
-      <Link
-        href="https://github.com/Gandalf-pro/auto-home-leds"
-        className="mr-2 rounded-2xl bg-slate-700/70 px-2 py-1 underline transition-all hover:text-pink-600"
-      >
-        Leds
-      </Link>
-      <Link
-        href="https://github.com/Gandalf-pro/auto-home-blinds-ac"
-        className="mr-2 rounded-2xl bg-slate-700/70 px-2 py-1 underline transition-all hover:text-pink-600"
-      >
-        Ac/Blinds
-      </Link>
-      <Link
-        href="https://github.com/Gandalf-pro/auto-home-arduino-general"
-        className="mr-2 rounded-2xl bg-slate-700/70 px-2 py-1 underline transition-all hover:text-pink-600"
-      >
-        General Arduino Lib
-      </Link>
       <br />
       <br />
       The automatic control aspect is facilitated through a user-friendly
