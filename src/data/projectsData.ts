@@ -51,7 +51,9 @@ export const projectsData: ProjectsDataType[] = [
   },
   {
     name: "🏠 Auto Home",
-    links: {},
+    links: {
+      github: "https://github.com/Gandalf-pro/auto-home-server",
+    },
     slug: "auto-home",
     technologies: [
       "Nodejs",
