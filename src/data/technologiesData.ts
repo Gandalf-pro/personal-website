@@ -157,6 +157,14 @@ const technologiesData: { name: string; category: TechCategories[] }[] = [
     name: "tRPC",
     category: ["backend"],
   },
+  {
+    name: "Svelte",
+    category: ["frontend"],
+  },
+  {
+    name: "Svelte Kit",
+    category: ["frontend", "backend"],
+  },
 ];
 
 export default technologiesData;
