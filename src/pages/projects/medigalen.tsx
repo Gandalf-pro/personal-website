@@ -1,5 +1,4 @@
 import type { NextPage } from "next";
-import Link from "next/link";
 import ProjectDetailPageWrapper from "~/components/ProjectDetailPageWrapper";
 
 const Medigalen: NextPage = () => {
