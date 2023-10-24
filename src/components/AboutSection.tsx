@@ -6,20 +6,25 @@ const AboutSection = () => {
   return (
     <HomeSection title="🚀 About" id="about">
       <div>
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maiores
-        tempora eveniet tempore, accusantium dolores ipsa laborum iure, adipisci
-        ad quisquam, atque quaerat consequuntur nostrum error libero deleniti
-        quia asperiores voluptatem. Lorem ipsum dolor sit amet consectetur
-        adipisicing elit. Possimus, doloremque officia. Provident recusandae
-        quam eum ducimus doloremque? Natus eligendi, esse praesentium repellat
-        soluta amet magni ullam sint illo dolor explicabo. Lorem ipsum dolor sit
-        amet consectetur adipisicing elit. Nemo fugit cumque quam perspiciatis
-        repudiandae, mollitia, distinctio provident ad pariatur enim soluta
-        ipsum cupiditate velit ipsa nobis totam fuga amet minus. Id quisquam
-        suscipit aliquid temporibus natus animi. Recusandae dignissimos eum a
-        culpa accusantium inventore nulla! Vero perferendis praesentium ipsam
-        placeat debitis? Ab illo doloremque tempore qui praesentium accusantium
-        recusandae ex.
+        As a software engineer with expertise in AI and full-stack development,
+        I enjoy working on diverse and challenging projects that require me to
+        learn new technologies and apply my skills in creative ways.
+        <br />
+        <br />I am an adaptable generalist who is comfortable with changing
+        requirements and environments, and a passionate learner who is always
+        eager to explore new tools and frameworks. My goal is to contribute to
+        innovative and impactful software projects that can make a difference in
+        the world.
+        <br />
+        <br />I graduated from Yaşar Üniversitesi with a Bachelor&apos;s degree
+        in Software Engineering, where I gained a solid foundation in
+        programming languages, software design, and data structures
+        <br />
+        <br />
+        Currently, I am a Software Engineer at App Empires, where I use React,
+        Nextjs, Typescript, React Native, RabbitMQ, Redis, Aws, Digital Ocean,
+        Sqs, Ai, Python, Kubernetes, and Microservices to build scalable and
+        reliable web applications that serve our user base.
       </div>
       <Technologies />
     </HomeSection>
