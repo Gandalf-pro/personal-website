@@ -31,13 +31,13 @@ const Header = () => {
         Projects
         <HeaderUnderline />
       </Link>
-      <Link
+      {/* <Link
         href="/blog"
         className="group inline-flex h-fit items-center justify-center font-medium drop-shadow"
       >
         Blog
         <HeaderUnderline />
-      </Link>
+      </Link> */}
     </>
   );
 
