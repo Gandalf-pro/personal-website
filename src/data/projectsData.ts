@@ -3,11 +3,16 @@ export interface ProjectsDataType {
   slug: string;
   technologies: string[];
   description: string;
+  links: { github?: string; website?: string };
 }
 
 export const projectsData: ProjectsDataType[] = [
   {
     name: "📷 Portfolio Site",
+    links: {
+      website: "/",
+      github: "https://github.com/Gandalf-pro/personal-website",
+    },
     slug: "portfolio",
     technologies: ["Nextjs", "Reactjs", "Tailwind", "Typescript"],
     description:
@@ -15,6 +20,7 @@ export const projectsData: ProjectsDataType[] = [
   },
   {
     name: "🤖 Discord Bot",
+    links: {},
     slug: "discord-bot",
     technologies: ["Nodejs", "Typescript", "Ai", "Gcp"],
     description:
@@ -22,6 +28,7 @@ export const projectsData: ProjectsDataType[] = [
   },
   {
     name: "🖼️ Unblur",
+    links: {},
     slug: "unblur",
     technologies: [
       "Nodejs",
@@ -36,6 +43,7 @@ export const projectsData: ProjectsDataType[] = [
   },
   {
     name: "🏥 Medigalen",
+    links: {},
     slug: "medigalen",
     technologies: ["Nodejs", "Typescript", "React", "Css", "Postgresql"],
     description:
@@ -43,6 +51,7 @@ export const projectsData: ProjectsDataType[] = [
   },
   {
     name: "🏠 Auto Home",
+    links: {},
     slug: "auto-home",
     technologies: [
       "Nodejs",
@@ -58,6 +67,7 @@ export const projectsData: ProjectsDataType[] = [
   },
   {
     name: "📝 Paragraph Writer",
+    links: {},
     slug: "gptalk",
     technologies: [
       "Nodejs",
@@ -71,6 +81,7 @@ export const projectsData: ProjectsDataType[] = [
   },
   {
     name: "🏛️ Council Plus",
+    links: {},
     slug: "council-plus",
     technologies: [
       "Vue",
@@ -86,6 +97,7 @@ export const projectsData: ProjectsDataType[] = [
   },
   {
     name: "🎭 What If App",
+    links: {},
     slug: "what-if",
     technologies: [
       "tRPC",
