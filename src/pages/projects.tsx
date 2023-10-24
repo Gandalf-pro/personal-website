@@ -15,7 +15,7 @@ const Projects: NextPage = () => {
           me.
         </p>
       </section>
-      <section className="container mx-auto mt-8 px-2 sm:px-0 grid grid-cols-2 gap-3">
+      <section className="container mx-auto mt-8 px-2 sm:px-0 grid sm:grid-cols-2 grid-cols-1 gap-3">
         {projectsData.map((val) => (
           <ProjectCard {...val} key={val.slug} />
         ))}
