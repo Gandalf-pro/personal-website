@@ -11,11 +11,11 @@ const ProjectCard = ({
   return (
     <div className="w-full rounded-xl bg-secondary p-3 shadow">
       <h3 className="mb-4 text-2xl font-extrabold">{name}</h3>
-      <div className="flex">
+      <div className="flex gap-1">
         {technologies.map((val) => (
           <div
             key={val}
-            className="rounded-full bg-slate-700/70 px-2 py-1 text-sm"
+            className="rounded-full bg-slate-700/70 px-2 py-1 text-sm text-primary/80"
           >
             {val}
           </div>
