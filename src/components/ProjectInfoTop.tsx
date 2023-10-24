@@ -22,7 +22,7 @@ const ProjectInfoTop = ({ slug }: ProjectInfoTopProps) => {
         ))}
       </div>
       <div>
-        <h2 className="mt-3 text-2xl font-semibold">✨ Summary</h2>
+        <h2 className="mt-3 text-2xl font-semibold">✨ What Is This?</h2>
         <div>{data.description}</div>
       </div>
     </section>
