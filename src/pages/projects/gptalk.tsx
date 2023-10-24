@@ -1,4 +1,5 @@
 import type { NextPage } from "next";
+import Link from "next/link";
 import ProjectDetailPageWrapper from "~/components/ProjectDetailPageWrapper";
 
 const Gptalk: NextPage = () => {
@@ -6,10 +7,13 @@ const Gptalk: NextPage = () => {
     <ProjectDetailPageWrapper slug="gptalk">
       I was actively involved in the development of the backend and Chrome
       extension components for an AI-powered chat application, accessible via
-      the following link: https://gptalk.co. My primary responsibility
-      encompassed the deployment and hosting of the application, which I
-      efficiently executed by leveraging Kubernetes on the Digital Ocean
-      platform.
+      the following link:{" "}
+      <Link href="https://gptalk.co" className="underline">
+        https://gptalk.co
+      </Link>
+      . My primary responsibility encompassed the deployment and hosting of the
+      application, which I efficiently executed by leveraging Kubernetes on the
+      Digital Ocean platform.
       <br />
       <br />
       For the backend(Nodejs, Typescript), I implemented streaming responses
