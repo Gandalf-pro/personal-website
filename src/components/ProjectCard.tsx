@@ -16,7 +16,7 @@ const ProjectCard = ({
           {technologies.map((val) => (
             <div
               key={val}
-              className="rounded-full bg-slate-700/70 px-2 py-1 text-sm text-primary/80"
+              className="rounded-full bg-slate-700/70 px-2 py-1 text-sm text-primary/80 whitespace-nowrap"
             >
               {val}
             </div>
