@@ -114,7 +114,7 @@ const technologiesData: { name: string; category: TechCategories[] }[] = [
     category: ["backend"],
   },
   {
-    name: "C+",
+    name: "C++",
     category: ["backend"],
   },
   {
@@ -136,6 +136,26 @@ const technologiesData: { name: string; category: TechCategories[] }[] = [
   {
     name: "Aws",
     category: ["devops"],
+  },
+  {
+    name: "Gcp",
+    category: ["devops"],
+  },
+  {
+    name: "Ai",
+    category: ["misc"],
+  },
+  {
+    name: "Mqtt",
+    category: ["misc"],
+  },
+  {
+    name: "SequelizeOrm",
+    category: ["backend"],
+  },
+  {
+    name: "tRPC",
+    category: ["backend"],
   },
 ];
 
