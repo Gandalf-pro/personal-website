@@ -12,7 +12,7 @@ const Unblur: NextPage = () => {
       <br />
       The AI engine powering this system was authored in Python, responsible for
       processing tasks retrieved from a job queue. The scalability of Kubernetes
-      nodes was dynamically managed in response to the queue's workload,
+      nodes was dynamically managed in response to the queue&apos;s workload,
       allowing for efficient resource allocation.
       <br />
       <br />

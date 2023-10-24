@@ -16,8 +16,8 @@ const Gptalk: NextPage = () => {
       from OpenAI to cater to the needs of our diverse client base, including
       iOS users and extension users. Furthermore, I played a pivotal role in the
       creation and refinement of a wide array of AI prompts designed to enhance
-      the application's functionality. These prompts covered various aspects
-      such as summarization, tone analysis, text length adjustments, and
+      the application&apos;s functionality. These prompts covered various
+      aspects such as summarization, tone analysis, text length adjustments, and
       language translations, all facilitated by our AI capabilities.
       <br />
       <br />
