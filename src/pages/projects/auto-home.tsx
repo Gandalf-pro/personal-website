@@ -19,7 +19,7 @@ const AutoHome: NextPage = () => {
       (sorry for the music)
       <br />
       <br />
-      Here are some github links:
+      Github links:
       <Link
         href="https://github.com/Gandalf-pro/auto-home-server"
         className="mx-2 rounded-2xl bg-slate-700/70 px-2 py-1 underline transition-all hover:text-pink-600"
