@@ -19,6 +19,45 @@ const AutoHome: NextPage = () => {
       (sorry for the music)
       <br />
       <br />
+      Here are some github links:
+      <Link
+        href="https://github.com/Gandalf-pro/auto-home-server"
+        className="mx-2 rounded-2xl bg-slate-700/70 px-2 py-1 underline transition-all hover:text-pink-600"
+      >
+        Server
+      </Link>
+      <Link
+        href="https://github.com/Gandalf-pro/auto-home-web"
+        className="mr-2 rounded-2xl bg-slate-700/70 px-2 py-1 underline transition-all hover:text-pink-600"
+      >
+        Web
+      </Link>
+      <Link
+        href="https://github.com/Gandalf-pro/auto-home-mobile"
+        className="mr-2 rounded-2xl bg-slate-700/70 px-2 py-1 underline transition-all hover:text-pink-600"
+      >
+        Mobile
+      </Link>
+      <Link
+        href="https://github.com/Gandalf-pro/auto-home-leds"
+        className="mr-2 rounded-2xl bg-slate-700/70 px-2 py-1 underline transition-all hover:text-pink-600"
+      >
+        Leds
+      </Link>
+      <Link
+        href="https://github.com/Gandalf-pro/auto-home-blinds-ac"
+        className="mr-2 rounded-2xl bg-slate-700/70 px-2 py-1 underline transition-all hover:text-pink-600"
+      >
+        Ac/Blinds
+      </Link>
+      <Link
+        href="https://github.com/Gandalf-pro/auto-home-arduino-general"
+        className="mr-2 rounded-2xl bg-slate-700/70 px-2 py-1 underline transition-all hover:text-pink-600"
+      >
+        General Arduino Lib
+      </Link>
+      <br />
+      <br />
       The automatic control aspect is facilitated through a user-friendly
       graphical interface, which enables the creation of rules for the system.
       For instance, rules can be established to trigger actions based on
