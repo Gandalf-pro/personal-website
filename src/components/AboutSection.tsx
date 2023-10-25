@@ -1,11 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import Technologies from "./Technologies";
 import HomeSection from "./HomeSection";
+import TechnologiesDetailedView from "./TechnologiesDetailedView";
 
 const AboutSection = () => {
+  const [isDetailsOpen, setIsDetailsOpen] = useState(false);
+
   return (
     <HomeSection title="🚀 About" id="about">
-      <div>
+      <Technologies disableHeader />
+      <div className="mt-3">
         As a software engineer with expertise in AI and full-stack development,
         I enjoy working on diverse and challenging projects that require me to
         learn new technologies and apply my skills in creative ways.
@@ -26,7 +30,18 @@ const AboutSection = () => {
         Sqs, Ai, Python, Kubernetes, and Microservices to build scalable and
         reliable web applications that serve our user base.
       </div>
-      <Technologies />
+      {isDetailsOpen ? (
+        <TechnologiesDetailedView className="mt-3" />
+      ) : (
+        <button
+          className="mt-3 rounded border-2 border-pink-600 px-2 py-1 text-xl font-semibold transition-all duration-300 ease-in-out hover:shadow-xl hover:shadow-pink-600/70"
+          onClick={() => {
+            setIsDetailsOpen(true);
+          }}
+        >
+          See Skills Categorized
+        </button>
+      )}
     </HomeSection>
   );
 };

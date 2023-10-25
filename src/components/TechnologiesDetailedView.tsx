@@ -3,7 +3,13 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "./Tabs";
 import { useMemo } from "react";
 import TechnologiesShowcase from "./TechnologiesShowcase";
 
-const TechnologiesDetailedView = () => {
+export interface TechnologiesDetailedViewProps {
+  className?: string;
+}
+
+const TechnologiesDetailedView = ({
+  className,
+}: TechnologiesDetailedViewProps) => {
   const data = useMemo(() => {
     return {
       backend: technologiesData
@@ -35,7 +41,7 @@ const TechnologiesDetailedView = () => {
   }, []);
 
   return (
-    <div>
+    <div className={className}>
       <Tabs defaultValue="backend" className="w-full">
         <TabsList className="mb-3 flex h-auto w-full flex-wrap sm:h-12 sm:flex-nowrap">
           <TabsTrigger
