@@ -17,8 +17,8 @@ const Home: NextPage = () => {
     <AppWrapper className="pb-32">
       <div className="grid grid-cols-12 items-center overflow-x-hidden">
         <motion.div
-          initial={{ x: "-50%", opacity: 0.6 }}
-          animate={{ x: "0", opacity: 1 }}
+          initial={{ x: "-50%", rotate: -25, opacity: 0.6 }}
+          animate={{ x: "0", rotate: 0, opacity: 1 }}
           transition={{ ease: "anticipate", duration: 2 }}
           className="absolute col-span-5 h-screen w-full sm:relative"
         >
@@ -59,8 +59,8 @@ const Home: NextPage = () => {
         </motion.div>
         <div className="hidden h-screen w-full sm:col-span-3 sm:block">
           <motion.div
-            initial={{ x: "50%", opacity: 0.6 }}
-            animate={{ x: "0", opacity: 1 }}
+            initial={{ x: "50%", rotate: 25, opacity: 0.6 }}
+            animate={{ x: "0", rotate: 0, opacity: 1 }}
             transition={{ ease: "anticipate", duration: 2 }}
             className="relative h-full w-full"
           >
