@@ -30,7 +30,12 @@ const Home: NextPage = () => {
             style={{ objectFit: "fill" }}
           />
         </motion.div>
-        <div className="z-10 col-span-8 col-start-3 mt-24 px-4 text-center text-white sm:col-span-4 sm:col-start-auto sm:mt-0">
+        <motion.div
+          initial={{ y: "180%", opacity: 0.6 }}
+          animate={{ y: "0", opacity: 1 }}
+          transition={{ ease: "anticipate", duration: 2 }}
+          className="z-10 col-span-8 col-start-3 mt-24 px-4 text-center text-white sm:col-span-4 sm:col-start-auto sm:mt-0"
+        >
           <h1 className="text-3xl font-extrabold tracking-tight text-white sm:text-5xl">
             Hi!✋
             <br />
@@ -51,7 +56,7 @@ const Home: NextPage = () => {
               Icon={IconBrandLinkedin}
             />
           </div>
-        </div>
+        </motion.div>
         <div className="hidden h-screen w-full sm:col-span-3 sm:block">
           <motion.div
             initial={{ x: "50%", opacity: 0.6 }}
