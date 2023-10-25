@@ -19,12 +19,21 @@ export const projectsData: ProjectsDataType[] = [
       "A personal portfolio website to show my skills and knowledge.",
   },
   {
-    name: "🤖 Discord Bot",
+    name: "🎭 What If App",
     links: {},
-    slug: "discord-bot",
-    technologies: ["Nodejs", "Typescript", "Ai", "Gcp"],
+    slug: "what-if",
+    technologies: [
+      "tRPC",
+      "React Native",
+      "Nextjs",
+      "Ai",
+      "Python",
+      "DigitalOcean",
+      "Postgresql",
+      "Typescript",
+    ],
     description:
-      "A discord bot with voice recognition. That plays music on a specific voice channel based on the voice command.",
+      "A face changer ai application that can swap faces in videos/images.",
   },
   {
     name: "🖼️ Unblur",
@@ -40,14 +49,6 @@ export const projectsData: ProjectsDataType[] = [
     ],
     description:
       "An ios application that takes in photos to be unblured.An iOS application designed to enhance and clarify blurry photos by using advanced image processing techniques.",
-  },
-  {
-    name: "🏥 Medigalen",
-    links: {},
-    slug: "medigalen",
-    technologies: ["Nodejs", "Typescript", "React", "Css", "Postgresql"],
-    description:
-      "An online meeting platform for connecting health professionals with patients.",
   },
   {
     name: "🏠 Auto Home",
@@ -82,6 +83,22 @@ export const projectsData: ProjectsDataType[] = [
     description: "An ai writing assistant/actors to talk to.",
   },
   {
+    name: "🤖 Discord Bot",
+    links: {},
+    slug: "discord-bot",
+    technologies: ["Nodejs", "Typescript", "Ai", "Gcp"],
+    description:
+      "A discord bot with voice recognition. That plays music on a specific voice channel based on the voice command.",
+  },
+  {
+    name: "🏥 Medigalen",
+    links: {},
+    slug: "medigalen",
+    technologies: ["Nodejs", "Typescript", "React", "Css", "Postgresql"],
+    description:
+      "An online meeting platform for connecting health professionals with patients.",
+  },
+  {
     name: "🏛️ Council Plus",
     links: {},
     slug: "council-plus",
@@ -96,22 +113,5 @@ export const projectsData: ProjectsDataType[] = [
     ],
     description:
       "A comprehensive application that optimizes London council operations by enhancing efficiency, enabling citizens to report issues like missing trash, and empowering council members to manage tasks across departments.",
-  },
-  {
-    name: "🎭 What If App",
-    links: {},
-    slug: "what-if",
-    technologies: [
-      "tRPC",
-      "React Native",
-      "Nextjs",
-      "Ai",
-      "Python",
-      "DigitalOcean",
-      "Postgresql",
-      "Typescript",
-    ],
-    description:
-      "A face changer ai application that can swap faces in videos/images.",
   },
 ];
