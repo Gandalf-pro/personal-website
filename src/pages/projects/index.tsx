@@ -8,7 +8,7 @@ import { motion } from "framer-motion";
 
 const Projects: NextPage = () => {
   return (
-    <AppWrapper>
+    <AppWrapper className="overflow-x-hidden">
       <motion.section
         initial={{ y: "-50%", opacity: 0.6 }}
         animate={{ y: "0", opacity: 1 }}
