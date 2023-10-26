@@ -2,6 +2,7 @@ import { Fira_Sans, Noto_Sans_Mono } from "next/font/google";
 import Head from "next/head";
 import Link from "next/link";
 import React, { PropsWithChildren } from "react";
+import { Analytics } from "@vercel/analytics/react";
 import { cn } from "~/utils/cn";
 import Header from "./Header";
 import Footer from "./Footer";
@@ -40,6 +41,7 @@ const AppWrapper = ({ children, title, className }: AppWrapperProps) => {
       </Head>
       <Header />
       <main className={cn(`min-h-screen`, className)}>{children}</main>
+      <Analytics />
       <Footer />
     </div>
   );
