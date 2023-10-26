@@ -15,7 +15,7 @@ import { constantVariables } from "~/utils/constantVariables";
 const Home: NextPage = () => {
   return (
     <AppWrapper className="pb-32">
-      <div className="grid grid-cols-12 items-center overflow-x-hidden">
+      <div className="grid grid-cols-12 items-center overflow-hidden">
         <motion.div
           initial={{ x: "-50%", rotate: -25, opacity: 0.6 }}
           animate={{ x: "0", rotate: 0, opacity: 1 }}
