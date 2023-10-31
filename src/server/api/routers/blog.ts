@@ -1,3 +1,4 @@
+import { TRPCError } from "@trpc/server";
 import { z } from "zod";
 
 import { createTRPCRouter, publicProcedure } from "~/server/api/trpc";
@@ -21,4 +22,31 @@ export const blogRouter = createTRPCRouter({
 
     return { blogs: tmp };
   }),
+  getSingleBlog: publicProcedure
+    .input(
+      z.object({
+        id: z.string().cuid2(),
+      }),
+    )
+    .query(async ({ ctx }) => {
+      const tmp = await ctx.db.query.blogs.findFirst({
+        with: {
+          author: true,
+          skills: {
+            with: {
+              skill: true,
+            },
+          },
+        },
+      });
+
+      if (!tmp) {
+        throw new TRPCError({
+          code: "NOT_FOUND",
+          message: "Sorry can't find this blog",
+        });
+      }
+
+      return { blog: tmp };
+    }),
 });
