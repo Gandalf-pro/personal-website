@@ -8,7 +8,7 @@ const AdminDashboard = () => {
 
   return (
     <DashboardWrapper className="container mx-auto" title="Dashboard">
-      <div className="grid grid-cols-2">
+      <div className="mt-12 grid sm:grid-cols-2 grid-cols-1 gap-3">
         {blogs.data?.blogs.map((blog) => (
           <DashboardBlogsListCard key={blog.id} blog={blog} />
         ))}
