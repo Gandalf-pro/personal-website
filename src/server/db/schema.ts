@@ -21,6 +21,13 @@ export const passwords = sqliteTable(
   },
 );
 
+export const passwordsRelation = relations(passwords, ({ one }) => ({
+  user: one(users, {
+    fields: [passwords.userId],
+    references: [users.id],
+  }),
+}));
+
 export const users = sqliteTable(
   "users",
   {
