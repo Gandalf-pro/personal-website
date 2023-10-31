@@ -16,7 +16,7 @@ export const users = sqliteTable(
   },
   (table) => {
     return {
-      slugIdx: index("slugIdx").on(table.slug),
+      slugIdx: index("usersSlugIdx").on(table.slug),
     };
   },
 );
@@ -30,7 +30,7 @@ export const skills = sqliteTable(
   },
   (table) => {
     return {
-      slugIdx: index("slugIdx").on(table.slug),
+      slugIdx: index("skillsSlugIdx").on(table.slug),
     };
   },
 );
@@ -54,7 +54,7 @@ export const blogs = sqliteTable(
   (table) => {
     return {
       authorIdx: index("authorIdx").on(table.authorId),
-      slugIdx: index("slugIdx").on(table.slug),
+      slugIdx: index("blogsSlugIdx").on(table.slug),
     };
   },
 );
