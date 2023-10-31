@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "build": "next build",
-    "db:push": "dotenv drizzle-kit push:mysql",
+    "db:push": "dotenv drizzle-kit push:sqlite",
     "db:studio": "dotenv drizzle-kit studio",
     "dev": "next dev",
     "lint": "next lint",
@@ -25,6 +25,7 @@
     "@trpc/server": "^10.37.1",
     "@vercel/analytics": "^1.1.1",
     "bcryptjs": "^2.4.3",
+    "better-sqlite3": "^9.0.0",
     "class-variance-authority": "^0.6.0",
     "clsx": "^1.2.1",
     "drizzle-orm": "^0.28.6",
