@@ -84,13 +84,13 @@ export const blogRouter = createTRPCRouter({
     .input(
       z.union([
         z.object({
-          title: z.string().min(3).max(200),
-          body: z.string().min(3).max(30_000),
-        }),
-        z.object({
           id: z.string().cuid2(),
           title: z.string().min(3).max(200).optional(),
           body: z.string().min(3).max(30_000).optional(),
+        }),
+        z.object({
+          title: z.string().min(3).max(200),
+          body: z.string().min(3).max(30_000),
         }),
       ]),
     )
