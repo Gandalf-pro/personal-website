@@ -80,54 +80,56 @@ export const blogRouter = createTRPCRouter({
 
       return { blog: tmp };
     }),
-  createBlog: protectedProcedure
+  upsertBlog: protectedProcedure
     .input(
-      z.object({
-        title: z.string().min(3).max(200),
-        body: z.string().min(3).max(30_000),
-      }),
-    )
-    .mutation(async ({ input, ctx }) => {
-      const slug = slugify(input.title);
-      const now = new Date();
-
-      const res = await ctx.db
-        .insert(blogs)
-        .values({
-          authorId: ctx.user.id,
-          body: input.body,
-          title: input.title,
-          slug,
-          createdAt: now,
-          updatedAt: now,
-        })
-        .returning({
-          id: blogs.id,
-        });
-
-      return { id: res.at(0)!.id };
-    }),
-  updateBlog: protectedProcedure
-    .input(
-      z.object({
-        id: z.string().cuid2(),
-        title: z.string().min(3).max(200).optional(),
-        body: z.string().min(3).max(30_000).optional(),
-      }),
+      z.union([
+        z.object({
+          title: z.string().min(3).max(200),
+          body: z.string().min(3).max(30_000),
+        }),
+        z.object({
+          id: z.string().cuid2(),
+          title: z.string().min(3).max(200).optional(),
+          body: z.string().min(3).max(30_000).optional(),
+        }),
+      ]),
     )
     .mutation(async ({ input, ctx }) => {
       const slug = input.title && slugify(input.title);
       const now = new Date();
 
-      await ctx.db
-        .update(blogs)
-        .set({
-          body: input.body,
-          title: input.title,
-          slug,
-          updatedAt: now,
-        })
-        .where(and(eq(blogs.id, input.id), eq(blogs.authorId, ctx.user.id)));
+      if ("id" in input) {
+        const res = await ctx.db
+          .update(blogs)
+          .set({
+            body: input.body,
+            title: input.title,
+            slug,
+            updatedAt: now,
+          })
+          .where(and(eq(blogs.id, input.id), eq(blogs.authorId, ctx.user.id)))
+          .returning({
+            id: blogs.id,
+          });
+
+        return { id: res.at(0)!.id };
+      } else {
+        const res = await ctx.db
+          .insert(blogs)
+          .values({
+            authorId: ctx.user.id,
+            body: input.body,
+            title: input.title,
+            slug: slug!,
+            createdAt: now,
+            updatedAt: now,
+          })
+          .returning({
+            id: blogs.id,
+          });
+
+        return { id: res.at(0)!.id };
+      }
     }),
   deleteBlog: protectedProcedure
     .input(
