@@ -3,6 +3,7 @@
 
 import { index, primaryKey, sqliteTable, text } from "drizzle-orm/sqlite-core";
 import { getDefaultTableData, timestampGen } from "./helpers";
+import { relations } from "drizzle-orm";
 
 export const users = sqliteTable(
   "users",
@@ -33,6 +34,10 @@ export const skills = sqliteTable(
   },
 );
 
+export const skillsRelation = relations(skills, ({ many }) => ({
+  skills: many(blogsSkillsJoin),
+}));
+
 export const blogs = sqliteTable(
   "blogs",
   {
@@ -53,6 +58,14 @@ export const blogs = sqliteTable(
   },
 );
 
+export const blogsRelation = relations(blogs, ({ one, many }) => ({
+  author: one(users, {
+    fields: [blogs.authorId],
+    references: [users.id],
+  }),
+  skills: many(blogsSkillsJoin),
+}));
+
 export const blogsSkillsJoin = sqliteTable(
   "blogsSkillsJoin",
   {
@@ -68,4 +81,18 @@ export const blogsSkillsJoin = sqliteTable(
       skillIdx: index("skillIdx").on(table.skillId),
     };
   },
+);
+
+export const blogsSkillsJoinRelation = relations(
+  blogsSkillsJoin,
+  ({ one }) => ({
+    blog: one(blogs, {
+      fields: [blogsSkillsJoin.blogId],
+      references: [blogs.id],
+    }),
+    skill: one(skills, {
+      fields: [blogsSkillsJoin.skillId],
+      references: [skills.id],
+    }),
+  }),
 );
