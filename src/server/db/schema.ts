@@ -8,8 +8,10 @@ import { relations } from "drizzle-orm";
 export const passwords = sqliteTable(
   "passwords",
   {
-    userId: text("userId").references(() => users.id, { onDelete: "cascade" }),
-    password: text("password"),
+    userId: text("userId")
+      .references(() => users.id, { onDelete: "cascade" })
+      .notNull(),
+    password: text("password").notNull(),
     createdAt: createdAtGen(),
   },
   (table) => {
@@ -23,10 +25,12 @@ export const users = sqliteTable(
   "users",
   {
     ...getDefaultTableData(),
-    email: text("email").unique(),
-    name: text("name", { length: 256 }),
-    slug: text("slug").unique(),
-    type: text("type", { enum: ["admin", "normal"] }),
+    email: text("email").unique().notNull(),
+    name: text("name", { length: 256 }).notNull(),
+    slug: text("slug").unique().notNull(),
+    type: text("type", { enum: ["admin", "normal"] })
+      .notNull()
+      .default("normal"),
   },
   (table) => {
     return {
@@ -44,8 +48,8 @@ export const skills = sqliteTable(
   "skills",
   {
     ...getDefaultTableData(),
-    name: text("name", { length: 256 }),
-    slug: text("slug").unique(),
+    name: text("name", { length: 256 }).notNull(),
+    slug: text("slug").unique().notNull(),
   },
   (table) => {
     return {
@@ -62,12 +66,14 @@ export const blogs = sqliteTable(
   "blogs",
   {
     ...getDefaultTableData(),
-    authorId: text("authorId").references(() => users.id, {
-      onDelete: "cascade",
-    }),
-    title: text("title", { length: 256 }),
-    slug: text("slug").unique(),
-    body: text("body"),
+    authorId: text("authorId")
+      .references(() => users.id, {
+        onDelete: "cascade",
+      })
+      .notNull(),
+    title: text("title", { length: 256 }).notNull(),
+    slug: text("slug").unique().notNull(),
+    body: text("body").notNull(),
     updatedAt: timestampGen("updatedAt"),
   },
   (table) => {
@@ -89,10 +95,14 @@ export const blogsRelation = relations(blogs, ({ one, many }) => ({
 export const blogsSkillsJoin = sqliteTable(
   "blogsSkillsJoin",
   {
-    blogId: text("blogId").references(() => blogs.id, { onDelete: "cascade" }),
-    skillId: text("skillId").references(() => skills.id, {
-      onDelete: "cascade",
-    }),
+    blogId: text("blogId")
+      .references(() => blogs.id, { onDelete: "cascade" })
+      .notNull(),
+    skillId: text("skillId")
+      .references(() => skills.id, {
+        onDelete: "cascade",
+      })
+      .notNull(),
   },
   (table) => {
     return {
