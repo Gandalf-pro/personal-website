@@ -74,7 +74,7 @@ export const blogRouter = createTRPCRouter({
         body: z.string().min(3).max(30_000),
       }),
     )
-    .query(async ({ input, ctx }) => {
+    .mutation(async ({ input, ctx }) => {
       const slug = slugify(input.title);
       const now = new Date();
 
@@ -102,7 +102,7 @@ export const blogRouter = createTRPCRouter({
         body: z.string().min(3).max(30_000).optional(),
       }),
     )
-    .query(async ({ input, ctx }) => {
+    .mutation(async ({ input, ctx }) => {
       const slug = input.title && slugify(input.title);
       const now = new Date();
 
@@ -122,7 +122,7 @@ export const blogRouter = createTRPCRouter({
         id: z.string().cuid2(),
       }),
     )
-    .query(async ({ input, ctx }) => {
+    .mutation(async ({ input, ctx }) => {
       await ctx.db.delete(blogs).where(eq(blogs.id, input.id));
     }),
 });

@@ -12,7 +12,7 @@ export const authRouter = createTRPCRouter({
         password: z.string().trim().min(6).max(32),
       }),
     )
-    .query(async ({ ctx, input }) => {
+    .mutation(async ({ ctx, input }) => {
       const user = await ctx.db.query.users.findFirst({
         where(fields, { eq }) {
           return eq(fields.email, input.email);
