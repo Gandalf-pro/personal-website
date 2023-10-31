@@ -9,10 +9,13 @@ import BoldButton from "./Editor/BoldButton";
 import Heading2Button from "./Editor/Heading2Button";
 import Heading3Button from "./Editor/Heading3Button";
 import ItalicButton from "./Editor/ItalicButton";
+import { Button } from "./Button";
 
 const BlogEditor = () => {
   const router = useRouter();
   const [title, setTitle] = useState("");
+  const [initialLoadDone, setInitialLoadDone] = useState(false);
+
   const id = router.query.id as string;
   const isNewBlog = id === "new" || !id;
 
@@ -22,15 +25,21 @@ const BlogEditor = () => {
     },
     {
       enabled: !isNewBlog,
+      refetchOnWindowFocus: false,
+      refetchOnReconnect: false,
+      refetchOnMount: true,
     },
   );
 
-  const createBlogMutation = api.blogs.createBlog.useMutation();
-  const updateBlogMutation = api.blogs.updateBlog.useMutation();
-
-  const [initialContent, setInitialContent] = useState(
-    "<p>Hello World! 🌎️</p>",
-  );
+  const upsertBlogMutation = api.blogs.upsertBlog.useMutation({
+    onSuccess(data) {
+      if (isNewBlog) {
+        void router.replace(`/admin/dashboard`);
+      } else {
+        void router.push(`/admin/dashboard`);
+      }
+    },
+  });
 
   const editor = useEditor({
     extensions: [
@@ -46,30 +55,43 @@ const BlogEditor = () => {
           "prose max-w-none dark:prose-invert prose-sm prose-base m-5 focus:outline-none",
       },
     },
-    content: initialContent,
+    content: "<p>Hello World! 🌎️</p>",
   });
 
   useEffect(() => {
-    if (!blog.data?.blog) {
+    if (!blog.data?.blog || initialLoadDone || !editor) {
       return;
     }
-    // editor.setOptions({ content: blog.data.blog.body });
-    setInitialContent(blog.data.blog.body);
-  }, [blog]);
+    editor.commands.setContent(blog.data.blog.body);
+    setTitle(blog.data.blog.title);
+    setInitialLoadDone(true);
+  }, [blog.data, initialLoadDone, editor]);
 
   return (
     <DashboardWrapper className="container mx-auto flex" title="Blog Edit">
       <form
         onSubmit={(e) => {
           e.preventDefault();
+          const body = editor?.getText();
+          if (!body) {
+            return;
+          }
+          upsertBlogMutation.mutate({
+            title,
+            body,
+            id: isNewBlog ? undefined : id,
+          });
         }}
         className="flex flex-1 flex-col gap-4 pb-12 pt-6"
       >
         <input
-          placeholder="Title"
-          className="w-full rounded bg-black/30 p-4 text-5xl font-extrabold focus:outline-none"
+          placeholder="Title *"
+          type="text"
+          className="w-full rounded bg-black/30 p-4 text-4xl font-extrabold focus:outline-none"
           value={title}
-          onChange={(e) => setTitle(e.currentTarget.value)}
+          onChange={(event) => {
+            setTitle(event.currentTarget.value);
+          }}
         />
         <div className="flex flex-1 flex-col">
           <div className="flex gap-1 rounded-t bg-slate-600/30 px-1 py-1">
@@ -83,9 +105,9 @@ const BlogEditor = () => {
             className="flex-1 rounded-b bg-black/30"
           />
         </div>
-        <button className="w-full rounded bg-green-600 px-4 py-2 text-3xl font-bold">
-          Save
-        </button>
+        <Button className="bg-green-600 px-4 py-2 text-3xl font-bold text-secondary-foreground hover:bg-green-600/80">
+          {isNewBlog ? "Create" : "Save"}
+        </Button>
       </form>
     </DashboardWrapper>
   );
