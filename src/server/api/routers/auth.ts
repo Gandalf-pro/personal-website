@@ -34,7 +34,7 @@ export const authRouter = createTRPCRouter({
         throw new TRPCError({
           code: "NOT_FOUND",
           message:
-            "Sorry either this user doesn't exist or your password is wrong.",
+            "Sorry, either this user doesn't exist or your password is wrong.",
         });
       }
       const { passwords, ...user } = userWithPassword;
@@ -43,7 +43,7 @@ export const authRouter = createTRPCRouter({
         throw new TRPCError({
           code: "NOT_FOUND",
           message:
-            "Sorry either this user doesn't exist or your password is wrong.",
+            "Sorry, either this user doesn't exist or your password is wrong.",
         });
       }
       const isLastPasswordMatch = await bcrypt.compare(
@@ -70,7 +70,7 @@ export const authRouter = createTRPCRouter({
         throw new TRPCError({
           code: "NOT_FOUND",
           message:
-            "Sorry either this user doesn't exist or your password is wrong.",
+            "Sorry, either this user doesn't exist or your password is wrong.",
         });
       }
 
