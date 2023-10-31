@@ -12,10 +12,11 @@ export const env = createEnv({
       .url()
       .refine(
         (str) => !str.includes("YOUR_MYSQL_URL_HERE"),
-        "You forgot to change the default URL"
-    ),
+        "You forgot to change the default URL",
+      ),
     DATABASE_AUTH_TOKEN: z.string().min(1).optional(),
     DISCORD_WEBHOOK_URL: z.string().url(),
+    SECRET_JWT: z.string().min(1),
     NODE_ENV: z
       .enum(["development", "test", "production"])
       .default("development"),
@@ -37,6 +38,7 @@ export const env = createEnv({
   runtimeEnv: {
     DATABASE_URL: process.env.DATABASE_URL,
     DATABASE_AUTH_TOKEN: process.env.DATABASE_AUTH_TOKEN,
+    SECRET_JWT: process.env.SECRET_JWT,
     NODE_ENV: process.env.NODE_ENV,
     DISCORD_WEBHOOK_URL: process.env.DISCORD_WEBHOOK_URL,
     // NEXT_PUBLIC_CLIENTVAR: process.env.NEXT_PUBLIC_CLIENTVAR,
