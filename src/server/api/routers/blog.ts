@@ -30,11 +30,16 @@ export const blogRouter = createTRPCRouter({
   }),
   getSingleBlog: publicProcedure
     .input(
-      z.object({
-        id: z.string().cuid2(),
-      }),
+      z.union([
+        z.object({
+          id: z.string().cuid2(),
+        }),
+        z.object({
+          slug: z.string().min(3).max(300),
+        }),
+      ]),
     )
-    .query(async ({ ctx }) => {
+    .query(async ({ ctx, input }) => {
       const tmp = await ctx.db.query.blogs.findFirst({
         with: {
           author: true,
@@ -43,6 +48,13 @@ export const blogRouter = createTRPCRouter({
               skill: true,
             },
           },
+        },
+        where(fields, { eq }) {
+          if ("id" in input) {
+            return eq(fields.id, input.id);
+          } else {
+            return eq(fields.slug, input.slug);
+          }
         },
       });
 
