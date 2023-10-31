@@ -9,6 +9,7 @@ export const users = sqliteTable(
   "users",
   {
     ...getDefaultTableData(),
+    email: text("email").unique(),
     name: text("name", { length: 256 }),
     slug: text("slug").unique(),
     type: text("type", { enum: ["admin", "normal"] }),
