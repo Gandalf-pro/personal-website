@@ -11,23 +11,36 @@ import {
 import { blogs } from "~/server/db/schema";
 
 export const blogRouter = createTRPCRouter({
-  getListOfBlogs: publicProcedure.query(async ({ ctx }) => {
-    const tmp = await ctx.db.query.blogs.findMany({
-      orderBy(fields, { desc }) {
-        return desc(fields.createdAt);
-      },
-      with: {
-        author: true,
-        skills: {
-          with: {
-            skill: true,
+  getListOfBlogs: publicProcedure
+    .input(
+      z
+        .object({
+          authorId: z.string().cuid2().optional(),
+        })
+        .optional(),
+    )
+    .query(async ({ ctx, input }) => {
+      const tmp = await ctx.db.query.blogs.findMany({
+        orderBy(fields, { desc }) {
+          return desc(fields.createdAt);
+        },
+        with: {
+          author: true,
+          skills: {
+            with: {
+              skill: true,
+            },
           },
         },
-      },
-    });
+        where(fields, { eq }) {
+          if (input?.authorId) {
+            return eq(fields.authorId, input.authorId);
+          }
+        },
+      });
 
-    return { blogs: tmp };
-  }),
+      return { blogs: tmp };
+    }),
   getSingleBlog: publicProcedure
     .input(
       z.union([
