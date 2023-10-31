@@ -63,7 +63,9 @@ function parseCookies(request: IncomingMessage) {
 function getTokenFromCookie(
   req: GetServerSidePropsContext["req"] | IncomingMessage,
 ) {
-  return "cookies" in req ? req.cookies.authToken : parseCookies(req).authToken;
+  return "cookies" in req
+    ? req.cookies["auth-token"]
+    : parseCookies(req)["auth-token"];
 }
 
 export const getServerUser = (

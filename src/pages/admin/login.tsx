@@ -3,9 +3,16 @@ import { type NextPage } from "next";
 import { useState } from "react";
 import AppWrapper from "~/components/AppWrapper";
 import { api } from "~/utils/api";
+import { setCookie } from "cookies-next";
 
 const AdminLogin: NextPage = () => {
-  const loginMutation = api.auth.login.useMutation();
+  const loginMutation = api.auth.login.useMutation({
+    onSuccess(data, variables, context) {
+      setCookie("auth-token", data.token, {
+        maxAge: 23 * 60 * 60, // 23 hours
+      });
+    },
+  });
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
