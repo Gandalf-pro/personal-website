@@ -1,4 +1,5 @@
 import { TRPCError } from "@trpc/server";
+import { and, eq } from "drizzle-orm";
 import slugify from "slugify";
 import { z } from "zod";
 
@@ -80,5 +81,27 @@ export const blogRouter = createTRPCRouter({
         });
 
       return { id: res.at(0)!.id };
+    }),
+  updateBlog: protectedProcedure
+    .input(
+      z.object({
+        id: z.string().cuid2(),
+        title: z.string().min(3).max(200).optional(),
+        body: z.string().min(3).max(30_000).optional(),
+      }),
+    )
+    .query(async ({ input, ctx }) => {
+      const slug = input.title && slugify(input.title);
+      const now = new Date();
+
+      await ctx.db
+        .update(blogs)
+        .set({
+          body: input.body,
+          title: input.title,
+          slug,
+          updatedAt: now,
+        })
+        .where(and(eq(blogs.id, input.id), eq(blogs.authorId, ctx.user.id)));
     }),
 });
