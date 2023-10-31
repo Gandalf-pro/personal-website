@@ -3,6 +3,7 @@ import dayjs from "dayjs";
 import relativeTime from "dayjs/plugin/relativeTime";
 import { IconCalendarPlus, IconRotate2, IconUser } from "@tabler/icons-react";
 import Link from "next/link";
+import { memo } from "react";
 dayjs.extend(relativeTime);
 
 export interface DashboardBlogsListCardProps {
@@ -36,4 +37,4 @@ const DashboardBlogsListCard = ({ blog }: DashboardBlogsListCardProps) => {
   );
 };
 
-export default DashboardBlogsListCard;
+export default memo(DashboardBlogsListCard);
