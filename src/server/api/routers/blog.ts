@@ -104,4 +104,13 @@ export const blogRouter = createTRPCRouter({
         })
         .where(and(eq(blogs.id, input.id), eq(blogs.authorId, ctx.user.id)));
     }),
+  deleteBlog: protectedProcedure
+    .input(
+      z.object({
+        id: z.string().cuid2(),
+      }),
+    )
+    .query(async ({ input, ctx }) => {
+      await ctx.db.delete(blogs).where(eq(blogs.id, input.id));
+    }),
 });
