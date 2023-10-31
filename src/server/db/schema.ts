@@ -2,8 +2,22 @@
 // https://orm.drizzle.team/docs/sql-schema-declaration
 
 import { index, primaryKey, sqliteTable, text } from "drizzle-orm/sqlite-core";
-import { getDefaultTableData, timestampGen } from "./helpers";
+import { createdAtGen, getDefaultTableData, timestampGen } from "./helpers";
 import { relations } from "drizzle-orm";
+
+export const passwords = sqliteTable(
+  "passwords",
+  {
+    userId: text("userId").references(() => users.id, { onDelete: "cascade" }),
+    password: text("password"),
+    createdAt: createdAtGen(),
+  },
+  (table) => {
+    return {
+      userIdx: index("passwordsUserIdx").on(table.userId),
+    };
+  },
+);
 
 export const users = sqliteTable(
   "users",
@@ -20,6 +34,11 @@ export const users = sqliteTable(
     };
   },
 );
+
+export const usersRelation = relations(users, ({ many }) => ({
+  passwords: many(passwords),
+  blogs: many(blogs),
+}));
 
 export const skills = sqliteTable(
   "skills",
