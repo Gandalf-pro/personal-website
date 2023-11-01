@@ -10,10 +10,13 @@ import Heading2Button from "./Editor/Heading2Button";
 import Heading3Button from "./Editor/Heading3Button";
 import ItalicButton from "./Editor/ItalicButton";
 import { Button } from "./Button";
+import { Switch } from "./Switch";
 
 const BlogEditor = () => {
+  const apiContext = api.useUtils();
   const router = useRouter();
   const [title, setTitle] = useState("");
+  const [active, setActive] = useState(true);
   const [initialLoadDone, setInitialLoadDone] = useState(false);
 
   const id = router.query.id as string;
@@ -32,11 +35,12 @@ const BlogEditor = () => {
   );
 
   const upsertBlogMutation = api.blogs.upsertBlog.useMutation({
-    onSuccess(data) {
+    async onSuccess() {
+      await apiContext.blogs.invalidate();
       if (isNewBlog) {
-        void router.replace(`/admin/dashboard`);
+        await router.replace(`/admin/dashboard`);
       } else {
-        void router.push(`/admin/dashboard`);
+        await router.push(`/admin/dashboard`);
       }
     },
   });
@@ -64,6 +68,7 @@ const BlogEditor = () => {
     }
     editor.commands.setContent(blog.data.blog.body);
     setTitle(blog.data.blog.title);
+    setActive(blog.data.blog.active);
     setInitialLoadDone(true);
   }, [blog.data, initialLoadDone, editor]);
 
@@ -77,22 +82,26 @@ const BlogEditor = () => {
             return;
           }
           upsertBlogMutation.mutate({
+            id: isNewBlog ? undefined : id,
+            active,
             title,
             body,
-            id: isNewBlog ? undefined : id,
           });
         }}
         className="flex flex-1 flex-col gap-4 pb-12 pt-6"
       >
-        <input
-          placeholder="Title *"
-          type="text"
-          className="w-full rounded bg-black/30 p-4 text-4xl font-extrabold focus:outline-none"
-          value={title}
-          onChange={(event) => {
-            setTitle(event.currentTarget.value);
-          }}
-        />
+        <div className="inline-flex w-full items-center bg-black/30 pr-4">
+          <input
+            placeholder="Title *"
+            type="text"
+            className="w-full flex-1 rounded bg-transparent p-4 text-4xl font-extrabold focus:outline-none"
+            value={title}
+            onChange={(event) => {
+              setTitle(event.currentTarget.value);
+            }}
+          />
+          <Switch onCheckedChange={setActive} checked={active} />
+        </div>
         <div className="flex flex-1 flex-col">
           <div className="flex gap-1 rounded-t bg-slate-600/30 px-1 py-1">
             <BoldButton editor={editor} />
