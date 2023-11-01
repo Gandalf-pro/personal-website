@@ -10,7 +10,7 @@ import {
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
-} from "./Tooltip";
+} from "./ui/Tooltip";
 
 export interface TechnologiesProps {
   disableHeader?: boolean;

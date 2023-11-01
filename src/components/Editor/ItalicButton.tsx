@@ -1,6 +1,6 @@
 import { IconItalic } from "@tabler/icons-react";
 import { type Editor } from "@tiptap/react";
-import { Toggle } from "../Toggle";
+import { Toggle } from "../ui/Toggle";
 
 export interface ItalicButtonProps {
   editor: Editor | null;

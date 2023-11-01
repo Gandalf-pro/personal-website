@@ -9,8 +9,8 @@ import BoldButton from "./Editor/BoldButton";
 import Heading2Button from "./Editor/Heading2Button";
 import Heading3Button from "./Editor/Heading3Button";
 import ItalicButton from "./Editor/ItalicButton";
-import { Button } from "./Button";
-import { Switch } from "./Switch";
+import { Button } from "./ui/Button";
+import { Switch } from "./ui/Switch";
 
 const BlogEditor = () => {
   const apiContext = api.useUtils();

@@ -1,5 +1,5 @@
 import technologiesData from "~/data/technologiesData";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "./Tabs";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "./ui/Tabs";
 import { useMemo } from "react";
 import TechnologiesShowcase from "./TechnologiesShowcase";
 

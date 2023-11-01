@@ -1,6 +1,6 @@
 import { IconH3 } from "@tabler/icons-react";
 import { type Editor } from "@tiptap/react";
-import { Toggle } from "../Toggle";
+import { Toggle } from "../ui/Toggle";
 
 export interface Heading3ButtonProps {
   editor: Editor | null;

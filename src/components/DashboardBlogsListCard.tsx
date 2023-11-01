@@ -4,7 +4,7 @@ import relativeTime from "dayjs/plugin/relativeTime";
 import { IconCalendarPlus, IconRotate2, IconUser } from "@tabler/icons-react";
 import Link from "next/link";
 import { memo } from "react";
-import { Switch } from "./Switch";
+import { Switch } from "./ui/Switch";
 import { cn } from "~/utils/cn";
 dayjs.extend(relativeTime);
 
