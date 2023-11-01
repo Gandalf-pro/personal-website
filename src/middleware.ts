@@ -6,10 +6,13 @@ export function middleware(request: NextRequest) {
 
   if (request.nextUrl.pathname.startsWith("/admin")) {
     const isLoginPageRequested = request.nextUrl.pathname === "/admin/login";
-    if (!isLoginPageRequested && !authToken) {
+    if (!authToken && !isLoginPageRequested) {
       return NextResponse.redirect(new URL("/admin/login", request.url));
     }
-    if (isLoginPageRequested && authToken) {
+    if (
+      authToken &&
+      (isLoginPageRequested || request.nextUrl.pathname === "/admin")
+    ) {
       return NextResponse.redirect(new URL("/admin/dashboard", request.url));
     }
   }
