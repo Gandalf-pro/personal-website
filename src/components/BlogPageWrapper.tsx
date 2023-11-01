@@ -1,5 +1,5 @@
 import { type PropsWithChildren } from "react";
-import { RouterOutputs } from "~/utils/api";
+import { type RouterOutputs } from "~/utils/api";
 import AppWrapper from "./AppWrapper";
 import BlogInfoTop from "./BlogInfoTop";
 

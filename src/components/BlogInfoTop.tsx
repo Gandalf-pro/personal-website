@@ -1,7 +1,7 @@
 import dayjs from "dayjs";
 import Image from "next/image";
 import { memo } from "react";
-import { RouterOutputs } from "~/utils/api";
+import { type RouterOutputs } from "~/utils/api";
 import TechnologiesShowcase from "./TechnologiesShowcase";
 
 export interface BlogInfoTopProps {

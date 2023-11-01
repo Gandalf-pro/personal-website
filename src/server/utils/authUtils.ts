@@ -1,8 +1,8 @@
 import { env } from "~/env.mjs";
 import type { users } from "../db/schema";
 import jwt from "jsonwebtoken";
-import { GetServerSidePropsContext, NextApiRequest } from "next";
-import { IncomingMessage } from "http";
+import { type GetServerSidePropsContext, type NextApiRequest } from "next";
+import { type IncomingMessage } from "http";
 
 export type TokenData = {
   id: (typeof users.$inferSelect)["id"];

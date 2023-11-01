@@ -1,7 +1,7 @@
 import { Fira_Sans, Noto_Sans_Mono } from "next/font/google";
 import Head from "next/head";
 import Link from "next/link";
-import React, { PropsWithChildren } from "react";
+import React, { type PropsWithChildren } from "react";
 import { Analytics } from "@vercel/analytics/react";
 import { cn } from "~/utils/cn";
 import Header from "./Header";

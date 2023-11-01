@@ -1,6 +1,6 @@
 import { Noto_Sans_Mono } from "next/font/google";
 import Head from "next/head";
-import { PropsWithChildren } from "react";
+import { type PropsWithChildren } from "react";
 import { cn } from "~/utils/cn";
 import DashboardHeader from "./DashboardHeader";
 
