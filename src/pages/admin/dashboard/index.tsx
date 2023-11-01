@@ -17,7 +17,7 @@ const AdminDashboard = () => {
         );
       }) ?? []
     );
-  }, [searchText]);
+  }, [searchText, blogs.data]);
 
   return (
     <DashboardWrapper
