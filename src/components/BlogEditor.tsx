@@ -72,7 +72,7 @@ const BlogEditor = () => {
       <form
         onSubmit={(e) => {
           e.preventDefault();
-          const body = editor?.getText();
+          const body = editor?.getHTML();
           if (!body) {
             return;
           }
