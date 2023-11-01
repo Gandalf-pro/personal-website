@@ -114,7 +114,10 @@ const BlogEditor = () => {
             className="flex-1 rounded-b bg-black/30"
           />
         </div>
-        <Button className="bg-green-600 px-4 py-6 text-3xl font-bold text-secondary-foreground hover:bg-green-600/80">
+        <Button
+          className="bg-green-600 px-4 py-6 text-3xl font-bold text-secondary-foreground hover:bg-green-600/80"
+          disabled={upsertBlogMutation.isLoading}
+        >
           {isNewBlog ? "Create" : "Save"}
         </Button>
       </form>
