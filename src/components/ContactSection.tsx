@@ -17,6 +17,7 @@ const ContactSection = () => {
       setIsLoading(true);
       const data = new FormData(e.currentTarget);
       const body: Record<string, string> = {};
+      // eslint-disable-next-line @typescript-eslint/no-base-to-string
       data.forEach((value, key) => (body[key] = value.toString()));
 
       const res = await fetch("/api/contact", {

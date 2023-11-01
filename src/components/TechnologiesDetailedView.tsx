@@ -76,19 +76,19 @@ const TechnologiesDetailedView = ({
           </TabsTrigger>
         </TabsList>
         <TabsContent className="flex flex-row flex-wrap gap-4" value="backend">
-          {data["backend"]}
+          {data.backend}
         </TabsContent>
         <TabsContent className="flex flex-row flex-wrap gap-4" value="devops">
-          {data["devops"]}
+          {data.devops}
         </TabsContent>
         <TabsContent className="flex flex-row flex-wrap gap-4" value="frontend">
-          {data["frontend"]}
+          {data.frontend}
         </TabsContent>
         <TabsContent className="flex flex-row flex-wrap gap-4" value="mobile">
-          {data["mobile"]}
+          {data.mobile}
         </TabsContent>
         <TabsContent className="flex flex-row flex-wrap gap-4" value="misc">
-          {data["misc"]}
+          {data.misc}
         </TabsContent>
       </Tabs>
     </div>
