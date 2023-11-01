@@ -16,7 +16,7 @@ const DashboardBlogsListCard = ({ blog }: DashboardBlogsListCardProps) => {
       className="rounded bg-black/50 p-4 shadow hover:bg-black/70 hover:shadow-xl"
       href={`/admin/dashboard/blog/${blog.id}`}
     >
-      <div className="mb-1 text-2xl font-semibold">{blog.title}</div>
+      <div className="mb-3 text-2xl font-semibold">{blog.title}</div>
       <div className="flex w-full flex-wrap items-center justify-between text-lg">
         <span className="inline-flex gap-1">
           <IconUser />
