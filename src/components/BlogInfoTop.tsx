@@ -2,6 +2,7 @@ import dayjs from "dayjs";
 import Image from "next/image";
 import { memo } from "react";
 import { RouterOutputs } from "~/utils/api";
+import TechnologiesShowcase from "./TechnologiesShowcase";
 
 export interface BlogInfoTopProps {
   blog: RouterOutputs["blogs"]["getSingleBlog"]["blog"];
@@ -11,11 +12,11 @@ const BlogInfoTop = ({ blog }: BlogInfoTopProps) => {
   return (
     <section className="container mx-auto mt-8 px-2 sm:px-0">
       <h1 className="text-5xl font-extrabold">{blog.title}</h1>
-      {/* <div className="mt-5 flex flex-row gap-2 overflow-x-auto">
-        {data.technologies.map((val) => (
-          <TechnologiesShowcase text={val} key={val} />
+      <div className="mt-5 flex flex-row gap-2 overflow-x-auto">
+        {blog.skills.map(({ skill }) => (
+          <TechnologiesShowcase text={skill.name} key={skill.id} />
         ))}
-      </div> */}
+      </div>
       <div className="mt-3 inline-flex items-center justify-center gap-3">
         <Image alt="Logo" src="/logo-transparent.png" width={64} height={64} />
         <div className="flex flex-col">
