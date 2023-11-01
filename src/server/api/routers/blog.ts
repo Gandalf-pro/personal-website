@@ -2,6 +2,7 @@ import { TRPCError } from "@trpc/server";
 import { and, eq } from "drizzle-orm";
 import slugify from "slugify";
 import { z } from "zod";
+import sanitizeHtml from "sanitize-html";
 
 import {
   createTRPCRouter,
@@ -108,12 +109,26 @@ export const blogRouter = createTRPCRouter({
         z.object({
           id: z.string().cuid2(),
           title: z.string().min(3).max(200).optional(),
-          body: z.string().min(3).max(30_000).optional(),
+          body: z
+            .string()
+            .min(3)
+            .max(30_000)
+            .optional()
+            .transform((val) => {
+              if (!val) {
+                return;
+              }
+              return sanitizeHtml(val);
+            }),
           active: z.boolean().optional(),
         }),
         z.object({
           title: z.string().min(3).max(200),
-          body: z.string().min(3).max(30_000),
+          body: z
+            .string()
+            .min(3)
+            .max(30_000)
+            .transform((val) => sanitizeHtml(val)),
           active: z.boolean().default(true),
         }),
       ]),
