@@ -93,6 +93,7 @@ const BlogEditor = () => {
             active,
             title,
             body,
+            skillIds: selectedIds.map((val) => val.value),
           });
         }}
         className="flex flex-1 flex-col gap-4 pb-12 pt-6"
