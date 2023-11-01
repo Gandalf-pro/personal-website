@@ -4,7 +4,7 @@ import DashboardWrapper from "~/components/DashboardWrapper";
 import { api } from "~/utils/api";
 
 const AdminDashboard = () => {
-  const blogs = api.blogs.getListOfBlogs.useQuery();
+  const blogs = api.blogs.getListOfBlogsPrivate.useQuery();
   const [searchText, setSearchText] = useState("");
 
   const filteredBlogs = useMemo(() => {
