@@ -11,12 +11,19 @@ import Heading3Button from "./Editor/Heading3Button";
 import ItalicButton from "./Editor/ItalicButton";
 import { Button } from "./ui/Button";
 import { Switch } from "./ui/Switch";
+import SkillSelector from "./SkillSelector";
 
 const BlogEditor = () => {
   const apiContext = api.useUtils();
   const router = useRouter();
   const [title, setTitle] = useState("");
   const [active, setActive] = useState(true);
+  const [selectedIds, setSelectedIds] = useState<
+    {
+      value: string;
+      label: string;
+    }[]
+  >([]);
   const [initialLoadDone, setInitialLoadDone] = useState(false);
 
   const id = router.query.id as string;
@@ -102,6 +109,10 @@ const BlogEditor = () => {
           />
           <Switch onCheckedChange={setActive} checked={active} />
         </div>
+        <SkillSelector
+          selectedIds={selectedIds}
+          setSelectedIds={setSelectedIds}
+        />
         <div className="flex flex-1 flex-col">
           <div className="flex gap-1 rounded-t bg-slate-600/30 px-1 py-1">
             <BoldButton editor={editor} />
