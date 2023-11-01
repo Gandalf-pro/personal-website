@@ -109,10 +109,12 @@ export const blogRouter = createTRPCRouter({
           id: z.string().cuid2(),
           title: z.string().min(3).max(200).optional(),
           body: z.string().min(3).max(30_000).optional(),
+          active: z.boolean().optional(),
         }),
         z.object({
           title: z.string().min(3).max(200),
           body: z.string().min(3).max(30_000),
+          active: z.boolean().default(true),
         }),
       ]),
     )
@@ -126,6 +128,7 @@ export const blogRouter = createTRPCRouter({
           .set({
             body: input.body,
             title: input.title,
+            active: input.active,
             slug,
             updatedAt: now,
           })
@@ -142,6 +145,7 @@ export const blogRouter = createTRPCRouter({
             authorId: ctx.user.id,
             body: input.body,
             title: input.title,
+            active: input.active,
             slug: slug!,
             createdAt: now,
             updatedAt: now,
