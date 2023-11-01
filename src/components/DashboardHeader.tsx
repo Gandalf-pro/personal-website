@@ -11,6 +11,13 @@ const DashboardHeader = () => {
   const innerLinks = (
     <>
       <Link
+        href="/admin/dashboard"
+        className="group inline-flex h-fit items-center justify-center font-medium drop-shadow"
+      >
+        Dashboard
+        <HeaderUnderline />
+      </Link>
+      <Link
         href="/admin/dashboard/blog/new"
         className="group inline-flex h-fit items-center justify-center font-medium drop-shadow"
       >
@@ -29,7 +36,7 @@ const DashboardHeader = () => {
           transition={{ ease: "anticipate", duration: 0.75, type: "spring" }}
         >
           <Link
-            href="/admin/dashboard"
+            href="/"
             className="group inline-flex h-fit items-center justify-center drop-shadow"
           >
             <Image
