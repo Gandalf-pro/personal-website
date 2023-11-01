@@ -2,7 +2,12 @@
 // https://orm.drizzle.team/docs/sql-schema-declaration
 
 import { index, primaryKey, sqliteTable, text } from "drizzle-orm/sqlite-core";
-import { createdAtGen, getDefaultTableData, timestampGen } from "./helpers";
+import {
+  booleanGen,
+  createdAtGen,
+  getDefaultTableData,
+  timestampGen,
+} from "./helpers";
 import { relations } from "drizzle-orm";
 
 export const passwords = sqliteTable(
@@ -78,6 +83,7 @@ export const blogs = sqliteTable(
         onDelete: "cascade",
       })
       .notNull(),
+    active: booleanGen("active"),
     title: text("title", { length: 256 }).notNull(),
     slug: text("slug").unique().notNull(),
     body: text("body").notNull(),

@@ -32,15 +32,37 @@ export const blogRouter = createTRPCRouter({
             },
           },
         },
-        where(fields, { eq }) {
-          if (input?.authorId) {
-            return eq(fields.authorId, input.authorId);
-          }
+        where(fields, { eq, and }) {
+          const authorEq = input?.authorId
+            ? eq(fields.authorId, input.authorId)
+            : undefined;
+          const activeEq = eq(fields.active, true);
+          return and(activeEq, authorEq);
         },
       });
 
       return { blogs: tmp };
     }),
+  getListOfBlogsPrivate: protectedProcedure.query(async ({ ctx }) => {
+    const tmp = await ctx.db.query.blogs.findMany({
+      orderBy(fields, { desc }) {
+        return desc(fields.createdAt);
+      },
+      with: {
+        author: true,
+        skills: {
+          with: {
+            skill: true,
+          },
+        },
+      },
+      where(fields, { eq }) {
+        return eq(fields.authorId, ctx.user.id);
+      },
+    });
+
+    return { blogs: tmp };
+  }),
   getSingleBlog: publicProcedure
     .input(
       z.union([
