@@ -1,11 +1,14 @@
-import { api, type RouterOutputs } from "~/utils/api";
+import {
+  IconCalendarPlus,
+  IconCaretRight,
+  IconRotate2,
+  IconUser,
+} from "@tabler/icons-react";
 import dayjs from "dayjs";
 import relativeTime from "dayjs/plugin/relativeTime";
-import { IconCalendarPlus, IconRotate2, IconUser } from "@tabler/icons-react";
 import Link from "next/link";
 import { memo } from "react";
-import { Switch } from "./Switch";
-import { cn } from "~/utils/cn";
+import { type RouterOutputs } from "~/utils/api";
 dayjs.extend(relativeTime);
 
 export interface BlogsListCardProps {
@@ -32,6 +35,12 @@ const BlogsListCard = ({ blog }: BlogsListCardProps) => {
               {dayjs(blog.updatedAt).fromNow(true)}
             </div>
           </div>
+          <Link
+            href={`/blog/${blog.slug}`}
+            className="mt-3 inline-flex w-full items-center justify-center gap-2 rounded-lg border-2 border-pink-600 px-4 py-1 text-lg shadow-sm shadow-pink-600 transition-colors hover:bg-gradient-to-br hover:from-pink-600 hover:to-red-600"
+          >
+            Read <IconCaretRight className="h-7 w-7" />
+          </Link>
         </div>
       </div>
     </Link>
