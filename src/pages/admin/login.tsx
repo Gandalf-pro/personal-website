@@ -9,7 +9,7 @@ import { useRouter } from "next/router";
 const AdminLogin: NextPage = () => {
   const router = useRouter();
   const loginMutation = api.auth.login.useMutation({
-    onSuccess(data, variables, context) {
+    onSuccess(data) {
       setCookie("auth-token", data.token, {
         maxAge: 23 * 60 * 60, // 23 hours
       });

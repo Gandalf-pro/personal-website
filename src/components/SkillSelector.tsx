@@ -1,7 +1,7 @@
-import { useMemo, type Dispatch, type SetStateAction, useState } from "react";
+import { useMemo, useState, type Dispatch, type SetStateAction } from "react";
 import { api } from "~/utils/api";
 
-import { cn } from "~/utils/cn";
+import { IconCheck, IconChevronsDown } from "@tabler/icons-react";
 import { Button } from "~/components/ui/Button";
 import {
   Command,
@@ -15,7 +15,7 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "~/components/ui/Popover";
-import { IconCheck, IconChevronsDown, IconX } from "@tabler/icons-react";
+import { cn } from "~/utils/cn";
 import { ScrollArea } from "./ui/ScrollArea";
 
 export interface SkillSelectorProps {

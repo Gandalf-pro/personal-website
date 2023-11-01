@@ -1,10 +1,9 @@
-import type { NextPage } from "next";
-import AppWrapper from "~/components/AppWrapper";
 import { motion } from "framer-motion";
-import Link from "next/link";
-import { api } from "~/utils/api";
+import type { NextPage } from "next";
 import { useMemo, useState } from "react";
+import AppWrapper from "~/components/AppWrapper";
 import BlogsListCard from "~/components/BlogsListCard";
+import { api } from "~/utils/api";
 
 const Blogs: NextPage = () => {
   const blogs = api.blogs.getListOfBlogs.useQuery();

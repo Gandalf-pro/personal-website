@@ -1,11 +1,10 @@
+import { Analytics } from "@vercel/analytics/react";
 import { Fira_Sans, Noto_Sans_Mono } from "next/font/google";
 import Head from "next/head";
-import Link from "next/link";
-import React, { type PropsWithChildren } from "react";
-import { Analytics } from "@vercel/analytics/react";
+import { type PropsWithChildren } from "react";
 import { cn } from "~/utils/cn";
-import Header from "./Header";
 import Footer from "./Footer";
+import Header from "./Header";
 
 const firaFont = Fira_Sans({
   display: "swap",
