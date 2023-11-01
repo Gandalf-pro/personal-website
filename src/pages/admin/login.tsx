@@ -4,13 +4,16 @@ import { useState } from "react";
 import AppWrapper from "~/components/AppWrapper";
 import { api } from "~/utils/api";
 import { setCookie } from "cookies-next";
+import { useRouter } from "next/router";
 
 const AdminLogin: NextPage = () => {
+  const router = useRouter();
   const loginMutation = api.auth.login.useMutation({
     onSuccess(data, variables, context) {
       setCookie("auth-token", data.token, {
         maxAge: 23 * 60 * 60, // 23 hours
       });
+      void router.replace("/admin/dashboard");
     },
   });
   const [email, setEmail] = useState("");
