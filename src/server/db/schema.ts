@@ -83,7 +83,7 @@ export const blogs = sqliteTable(
         onDelete: "cascade",
       })
       .notNull(),
-    active: booleanGen("active"),
+    active: booleanGen("active").default(true).notNull(),
     title: text("title", { length: 256 }).notNull(),
     slug: text("slug").unique().notNull(),
     body: text("body").notNull(),
