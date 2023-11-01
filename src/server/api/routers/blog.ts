@@ -134,7 +134,7 @@ export const blogRouter = createTRPCRouter({
       ]),
     )
     .mutation(async ({ input, ctx }) => {
-      const slug = input.title && slugify(input.title);
+      const slug = input.title && slugify(input.title, { lower: true });
       const now = new Date();
 
       if ("id" in input) {
