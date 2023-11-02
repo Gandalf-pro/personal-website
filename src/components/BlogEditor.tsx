@@ -70,6 +70,15 @@ const BlogEditor = () => {
   });
 
   useEffect(() => {
+    if (id === "new") {
+      editor?.commands.setContent("<p>Hello World! 🌎️</p>");
+      setTitle("");
+      setActive(true);
+      setSelectedIds([]);
+    }
+  }, [id]);
+
+  useEffect(() => {
     if (!blog.data?.blog || initialLoadDone || !editor) {
       return;
     }
