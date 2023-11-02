@@ -4,6 +4,7 @@ import { useMemo, useState } from "react";
 import AppWrapper from "~/components/AppWrapper";
 import BlogsListCard from "~/components/BlogsListCard";
 import { api } from "~/utils/api";
+import { helpers } from "~/utils/createServerSideHelpers";
 
 const Blogs: NextPage = () => {
   const blogs = api.blogs.getListOfBlogs.useQuery();
@@ -53,5 +54,16 @@ const Blogs: NextPage = () => {
     </AppWrapper>
   );
 };
+
+export async function getStaticProps() {
+  await helpers.blogs.getListOfBlogs.prefetch();
+
+  return {
+    props: {
+      trpcState: helpers.dehydrate(),
+    },
+    revalidate: 10,
+  };
+}
 
 export default Blogs;
