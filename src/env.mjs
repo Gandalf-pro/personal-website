@@ -15,7 +15,7 @@ export const env = createEnv({
         "You forgot to change the default URL",
       ),
     DATABASE_AUTH_TOKEN: z.string().min(1).optional(),
-    DISCORD_WEBHOOK_URL: z.string().url(),
+    DISCORD_WEBHOOK_URL: z.string().url().optional(),
     SECRET_JWT: z.string().min(1),
     NODE_ENV: z
       .enum(["development", "test", "production"])

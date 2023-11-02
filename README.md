@@ -1,28 +1,29 @@
-# Create T3 App
+# Getting started
+My env: node:v21.1.0, pnpm:8.7.1
 
-This is a [T3 Stack](https://create.t3.gg/) project bootstrapped with `create-t3-app`.
+1. Install the packages
 
-## What's next? How do I make an app with this?
+```bash
+pnpm install
+```
+or
+```bash
+npm install
+```
 
-We try to keep this project as simple as possible, so you can start with just the scaffolding we set up for you, and add additional things later when they become necessary.
+2. Copy **.env.example** file to **.env** everything is already inside you don't need to make changes to make it work
 
-If you are not familiar with the different technologies used in this project, please refer to the respective docs. If you still are in the wind, please join our [Discord](https://t3.gg/discord) and ask for help.
+3. Push and seed the database with default values you can change the default password from **src/server/db/seed.ts** file
+```bash
+pnpm db:push
+pnpm db:seed
+```
 
-- [Next.js](https://nextjs.org)
-- [NextAuth.js](https://next-auth.js.org)
-- [Prisma](https://prisma.io)
-- [Tailwind CSS](https://tailwindcss.com)
-- [tRPC](https://trpc.io)
+4. Run the dev server
+```bash
+pnpm dev
+```
 
-## Learn More
+5. Since this is a personal site i didn't add any buttons to login. In order to login goto **/admin/login** or just **/admin** and it will redirect.
 
-To learn more about the [T3 Stack](https://create.t3.gg/), take a look at the following resources:
-
-- [Documentation](https://create.t3.gg/)
-- [Learn the T3 Stack](https://create.t3.gg/en/faq#what-learning-resources-are-currently-available) — Check out these awesome tutorials
-
-You can check out the [create-t3-app GitHub repository](https://github.com/t3-oss/create-t3-app) — your feedback and contributions are welcome!
-
-## How do I deploy this?
-
-Follow our deployment guides for [Vercel](https://create.t3.gg/en/deployment/vercel), [Netlify](https://create.t3.gg/en/deployment/netlify) and [Docker](https://create.t3.gg/en/deployment/docker) for more information.
+6. Login using default email/password from **src/server/db/seed.ts** file
