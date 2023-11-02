@@ -76,6 +76,12 @@ const BlogEditor = () => {
     editor.commands.setContent(blog.data.blog.body);
     setTitle(blog.data.blog.title);
     setActive(blog.data.blog.active);
+    setSelectedIds(
+      blog.data.blog.skills.map((val) => ({
+        label: val.skill.name,
+        value: val.skillId,
+      })),
+    );
     setInitialLoadDone(true);
   }, [blog.data, initialLoadDone, editor]);
 
