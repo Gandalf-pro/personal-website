@@ -8,6 +8,9 @@ type ResponseData = {
 };
 
 async function sendMailToDiscord(msg: string) {
+  if (!env.DISCORD_WEBHOOK_URL) {
+    return;
+  }
   const res = await fetch(env.DISCORD_WEBHOOK_URL, {
     method: "POST",
     body: JSON.stringify({
@@ -39,7 +42,7 @@ function getSplitMessage(msg: string) {
 
 export default async function handler(
   req: NextApiRequest,
-  res: NextApiResponse<ResponseData>
+  res: NextApiResponse<ResponseData>,
 ) {
   if (req.method !== "POST") {
     return res.status(405);
