@@ -43,32 +43,34 @@ const DashboardBlogsListCard = ({ blog }: DashboardBlogsListCardProps) => {
     >
       <div className="mb-3 inline-flex w-full items-center justify-between">
         <div className="text-2xl font-semibold">{blog.title}</div>
-        <Switch
-          className="mr-2"
-          checked={blog.active}
-          disabled={isLoading}
-          onClick={(e) => {
-            e.preventDefault();
-            upsertBlog.mutate({
-              id: blog.id,
-              active: !blog.active,
-            });
-          }}
-        />
-        <Button
-          variant="destructive"
-          size="icon"
-          className=""
-          disabled={isLoading}
-          onClick={(e) => {
-            e.preventDefault();
-            deleteBlog.mutate({
-              id: blog.id,
-            });
-          }}
-        >
-          <IconTrash className="" />
-        </Button>
+        <div>
+          <Switch
+            className="mr-2"
+            checked={blog.active}
+            disabled={isLoading}
+            onClick={(e) => {
+              e.preventDefault();
+              upsertBlog.mutate({
+                id: blog.id,
+                active: !blog.active,
+              });
+            }}
+          />
+          <Button
+            variant="destructive"
+            size="icon"
+            className=""
+            disabled={isLoading}
+            onClick={(e) => {
+              e.preventDefault();
+              deleteBlog.mutate({
+                id: blog.id,
+              });
+            }}
+          >
+            <IconTrash className="" />
+          </Button>
+        </div>
       </div>
       <div className="flex w-full flex-wrap items-center justify-between text-lg">
         <span className="inline-flex gap-1">
