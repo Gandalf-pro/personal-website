@@ -42,7 +42,7 @@ const Header = () => {
   );
 
   return (
-    <div className="sticky top-0 z-50 mx-auto h-fit w-full bg-gradient-to-b from-[#1f2733] to-[#1f2838] px-4 py-2 text-xl shadow shadow-pink-500 transition-all sm:h-20">
+    <header className="sticky top-0 z-50 mx-auto h-fit w-full bg-gradient-to-b from-[#1f2733] to-[#1f2838] px-4 py-2 text-xl shadow shadow-pink-500 transition-all sm:h-20">
       <div className="flex h-full w-full items-center justify-between sm:justify-around">
         <motion.div
           initial={{ x: "-100%", opacity: 0.6 }}
@@ -72,12 +72,12 @@ const Header = () => {
             animate={{ x: "0", opacity: 1 }}
             transition={{ ease: "anticipate", duration: 0.75, type: "spring" }}
           >
-            <div className="flex gap-3">{innerLinks}</div>
+            <nav className="flex gap-3">{innerLinks}</nav>
           </motion.div>
         </div>
       </div>
       {isVisible && (
-        <motion.div
+        <motion.nav
           layout
           initial={{ x: "-50%", opacity: 0.6 }}
           animate={{ x: "0", opacity: 1 }}
@@ -85,9 +85,9 @@ const Header = () => {
           className="flex flex-col gap-3 pb-3 sm:hidden"
         >
           {innerLinks}
-        </motion.div>
+        </motion.nav>
       )}
-    </div>
+    </header>
   );
 };
 
