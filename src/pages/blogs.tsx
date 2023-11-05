@@ -23,7 +23,7 @@ const Blogs: NextPage = () => {
   }, [searchText, blogs.data]);
 
   return (
-    <AppWrapper title="Özgür Sargut Blogs">
+    <AppWrapper title="Özgür Sargut Blogs" className="overflow-x-hidden">
       <motion.section
         initial={{ y: "-50%", opacity: 0.6 }}
         animate={{ y: "0", opacity: 1 }}
