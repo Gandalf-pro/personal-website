@@ -20,7 +20,7 @@ const BlogInfoTop = ({ blog }: BlogInfoTopProps) => {
       <div className="mt-3 inline-flex items-center justify-center gap-3">
         <Image alt="Logo" src="/logo-transparent.png" width={64} height={64} />
         <div className="flex flex-col">
-          <h2 className="font-bold text-lg">{blog.author.name}</h2>
+          <h2 className="text-lg font-bold">{blog.author.name}</h2>
           <div className="inline-flex items-center justify-center gap-2">
             <h2 className="font-medium">
               Published {dayjs(blog.createdAt).format("MMM DD, YY")}
@@ -32,6 +32,7 @@ const BlogInfoTop = ({ blog }: BlogInfoTopProps) => {
           </div>
         </div>
       </div>
+      <div className="my-3 h-px w-full rounded bg-white/30" />
     </section>
   );
 };
