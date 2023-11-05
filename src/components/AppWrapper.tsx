@@ -34,7 +34,7 @@ const AppWrapper = ({
 }: AppWrapperProps) => {
   return (
     <div
-      className={`${firaFont.variable} ${notoFont.variable} bg-gradient-to-br from-[#1f2733] to-[#1f2838] font-mono text-white`}
+      className={`${firaFont.variable} ${notoFont.variable} flex min-h-screen flex-col bg-gradient-to-br from-[#1f2733] to-[#1f2838] font-mono text-white`}
     >
       <Head>
         <title>{title ?? "Özgür Sargut Portfolio/Personal Website"}</title>
@@ -45,7 +45,7 @@ const AppWrapper = ({
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
-      <main className={cn(`min-h-screen`, className)}>{children}</main>
+      <main className={cn(`flex-1`, className)}>{children}</main>
       <Analytics />
       <Footer />
     </div>
