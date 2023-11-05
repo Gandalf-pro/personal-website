@@ -9,6 +9,12 @@ import relativeTime from "dayjs/plugin/relativeTime";
 import Link from "next/link";
 import { memo } from "react";
 import { type RouterOutputs } from "~/utils/api";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "./ui/Tooltip";
 dayjs.extend(relativeTime);
 
 export interface BlogsListCardProps {
@@ -38,10 +44,19 @@ const BlogsListCard = ({ blog }: BlogsListCardProps) => {
             {blog.author.name}
           </span>
           <div className="flex flex-wrap gap-1">
-            <div className="inline-flex items-center justify-center gap-1">
-              <IconCalendarPlus />
-              {dayjs(blog.createdAt).fromNow()}
-            </div>
+            <TooltipProvider delayDuration={250}>
+              <Tooltip>
+                <TooltipTrigger>
+                  <div className="inline-flex items-center justify-center gap-1">
+                    <IconCalendarPlus />
+                    {dayjs(blog.createdAt).fromNow()}
+                  </div>
+                </TooltipTrigger>
+                <TooltipContent>
+                  <p>Published At</p>
+                </TooltipContent>
+              </Tooltip>
+            </TooltipProvider>
           </div>
           <Link
             href={`/blog/${blog.slug}`}
