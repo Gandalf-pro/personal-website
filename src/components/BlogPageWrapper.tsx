@@ -9,7 +9,7 @@ export interface BlogPageWrapperProps extends PropsWithChildren {
 
 const BlogPageWrapper = ({ blog, children }: BlogPageWrapperProps) => {
   return (
-    <AppWrapper>
+    <AppWrapper title={`${blog.title} | by ${blog.author.name}`}>
       <BlogInfoTop blog={blog} />
       <section className="container mx-auto mt-8 px-2 text-justify sm:px-0">
         <article

@@ -22,19 +22,25 @@ const notoFont = Noto_Sans_Mono({
 
 export interface AppWrapperProps extends PropsWithChildren {
   title?: string;
+  description?: string;
   className?: string;
 }
 
-const AppWrapper = ({ children, title, className }: AppWrapperProps) => {
+const AppWrapper = ({
+  children,
+  title,
+  className,
+  description,
+}: AppWrapperProps) => {
   return (
     <div
       className={`${firaFont.variable} ${notoFont.variable} bg-gradient-to-br from-[#1f2733] to-[#1f2838] font-mono text-white`}
     >
       <Head>
-        <title>{title ?? "Portfolio"}</title>
+        <title>{title ?? "Özgür Sargut Portfolio/Personal Website"}</title>
         <meta
           name="description"
-          content="Özgür Sargut Portfolio/Personal Website"
+          content={description ?? "Özgür Sargut Portfolio/Personal Website"}
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
