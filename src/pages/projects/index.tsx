@@ -8,7 +8,7 @@ import { motion } from "framer-motion";
 
 const Projects: NextPage = () => {
   return (
-    <AppWrapper className="overflow-x-hidden">
+    <AppWrapper className="overflow-x-hidden" title="Özgür Sargut Projects">
       <motion.section
         initial={{ y: "-50%", opacity: 0.6 }}
         animate={{ y: "0", opacity: 1 }}

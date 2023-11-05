@@ -1,18 +1,12 @@
-import React, { memo } from "react";
-import { projectsData } from "~/data/projectsData";
+import { memo } from "react";
+import { type ProjectsDataType } from "~/data/projectsData";
 import TechnologiesShowcase from "./TechnologiesShowcase";
 
 export interface ProjectInfoTopProps {
-  slug: string;
+  data: ProjectsDataType;
 }
 
-const ProjectInfoTop = ({ slug }: ProjectInfoTopProps) => {
-  const data = projectsData.find((val) => val.slug === slug);
-
-  if (!data) {
-    return <>Cant Find Data</>;
-  }
-
+const ProjectInfoTop = ({ data }: ProjectInfoTopProps) => {
   return (
     <section className="container mx-auto mt-8 px-2 sm:px-0">
       <h1 className="text-5xl font-extrabold">{data.name}</h1>
