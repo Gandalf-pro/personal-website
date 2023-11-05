@@ -17,8 +17,8 @@ export interface BlogsListCardProps {
 
 const BlogsListCard = ({ blog }: BlogsListCardProps) => {
   return (
-    <Link href={`/blog/${blog.slug}`}>
-      <div className="rounded bg-secondary p-3 shadow hover:bg-secondary hover:shadow-xl">
+    <Link href={`/blog/${blog.slug}`} className="h-full">
+      <div className="flex h-full flex-col justify-between rounded bg-secondary p-3 shadow hover:bg-secondary hover:shadow-xl">
         <div className="mb-3 text-2xl font-semibold">{blog.title}</div>
         {blog.skills.length > 0 && (
           <div className="-mt-1 mb-3 flex gap-1 overflow-x-auto">
@@ -40,11 +40,7 @@ const BlogsListCard = ({ blog }: BlogsListCardProps) => {
           <div className="flex flex-wrap gap-1">
             <div className="inline-flex items-center justify-center gap-1">
               <IconCalendarPlus />
-              {dayjs(blog.createdAt).fromNow(true)}
-            </div>
-            <div className="inline-flex items-center justify-center gap-1">
-              <IconRotate2 />
-              {dayjs(blog.updatedAt).fromNow(true)}
+              {dayjs(blog.createdAt).fromNow()}
             </div>
           </div>
           <Link
