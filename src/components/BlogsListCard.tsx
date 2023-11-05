@@ -15,6 +15,7 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "./ui/Tooltip";
+import CtaGradientButton from "./CtaGradientButton";
 dayjs.extend(relativeTime);
 
 export interface BlogsListCardProps {
@@ -58,12 +59,9 @@ const BlogsListCard = ({ blog }: BlogsListCardProps) => {
               </Tooltip>
             </TooltipProvider>
           </div>
-          <Link
-            href={`/blog/${blog.slug}`}
-            className="mt-3 inline-flex w-full items-center justify-center gap-2 rounded-lg border-2 border-pink-600 px-4 py-1 text-lg shadow-sm shadow-pink-600 transition-colors hover:bg-gradient-to-br hover:from-pink-600 hover:to-red-600"
-          >
+          <CtaGradientButton href={`/blog/${blog.slug}`}>
             Read <IconCaretRight className="h-7 w-7" />
-          </Link>
+          </CtaGradientButton>
         </div>
       </div>
     </Link>

@@ -1,6 +1,7 @@
 import { IconCaretRight } from "@tabler/icons-react";
 import Link from "next/link";
 import { type ProjectsDataType } from "~/data/projectsData";
+import CtaGradientButton from "./CtaGradientButton";
 
 const ProjectCard = ({
   description,
@@ -26,13 +27,11 @@ const ProjectCard = ({
           {description}
         </div>
       </div>
+
       {!!slug && (
-        <Link
-          href={`/projects/${slug}`}
-          className="inline-flex w-full items-center justify-center gap-2 rounded-lg border-2 border-pink-600 px-4 py-1 text-lg shadow-sm shadow-pink-600 transition-colors hover:bg-gradient-to-br hover:from-pink-600 hover:to-red-600"
-        >
+        <CtaGradientButton href={`/projects/${slug}`}>
           Learn More <IconCaretRight className="h-7 w-7" />
-        </Link>
+        </CtaGradientButton>
       )}
     </div>
   );
