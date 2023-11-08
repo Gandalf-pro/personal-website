@@ -16,20 +16,22 @@ const Home: NextPage = () => {
   return (
     <AppWrapper className="pb-32">
       <div className="grid grid-cols-12 items-center overflow-hidden">
-        <motion.div
-          initial={{ x: "-50%", rotate: -25, opacity: 0.6 }}
-          animate={{ x: "0", rotate: 0, opacity: 1 }}
-          transition={{ ease: "anticipate", duration: 2 }}
-          className="absolute col-span-5 h-screen w-full sm:relative"
-        >
-          <Image
-            src="/bg-new-left.png"
-            alt="Roses as background"
-            className="opacity-25 sm:opacity-100"
-            fill
-            style={{ objectFit: "fill" }}
-          />
-        </motion.div>
+        <div className="absolute col-span-5 h-screen w-full overflow-hidden sm:relative">
+          <motion.div
+            initial={{ x: "-50%", rotate: -25, opacity: 0.6 }}
+            animate={{ x: "0", rotate: 0, opacity: 1 }}
+            transition={{ ease: "anticipate", duration: 2 }}
+            className="h-full w-full"
+          >
+            <Image
+              src="/bg-new-left.png"
+              alt="Roses as background"
+              className="opacity-25 sm:opacity-100"
+              fill
+              style={{ objectFit: "fill" }}
+            />
+          </motion.div>
+        </div>
         <motion.div
           initial={{ y: "180%", opacity: 0.6 }}
           animate={{ y: "0", opacity: 1 }}
