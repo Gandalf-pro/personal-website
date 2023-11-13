@@ -66,7 +66,7 @@ const Header = () => {
           <Hamburger isVisible={isVisible} setIsVisible={setIsVisible} />
         </div>
 
-        <div className="hidden bg-red-300 sm:block">
+        <div className="hidden sm:block">
           <motion.div
             initial={{ x: "50%", opacity: 0.6 }}
             animate={{ x: "0", opacity: 1 }}
