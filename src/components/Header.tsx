@@ -42,7 +42,7 @@ const Header = () => {
   );
 
   return (
-    <header className="sticky top-0 z-50 mx-auto h-fit w-full bg-gradient-to-b from-[#1f2733] to-[#1f2838] px-4 py-2 text-xl shadow shadow-pink-500 transition-all sm:h-20">
+    <header className="sticky top-0 z-50 mx-auto h-fit w-full overflow-x-hidden bg-gradient-to-b from-[#1f2733] to-[#1f2838] px-4 py-2 text-xl shadow shadow-pink-500 transition-all sm:h-20">
       <div className="flex h-full w-full items-center justify-between sm:justify-around">
         <motion.div
           initial={{ x: "-100%", opacity: 0.6 }}
@@ -66,7 +66,7 @@ const Header = () => {
           <Hamburger isVisible={isVisible} setIsVisible={setIsVisible} />
         </div>
 
-        <div className="hidden sm:block">
+        <div className="hidden bg-red-300 sm:block">
           <motion.div
             initial={{ x: "50%", opacity: 0.6 }}
             animate={{ x: "0", opacity: 1 }}
