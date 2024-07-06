@@ -12,6 +12,7 @@ import ItalicButton from "./Editor/ItalicButton";
 import { Button } from "./ui/Button";
 import { Switch } from "./ui/Switch";
 import SkillSelector from "./SkillSelector";
+import Link from "@tiptap/extension-link";
 
 const BlogEditor = () => {
   const apiContext = api.useUtils();
@@ -59,6 +60,7 @@ const BlogEditor = () => {
           levels: [2, 3],
         },
       }),
+      Link,
     ],
     editorProps: {
       attributes: {
